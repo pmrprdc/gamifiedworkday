@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+
+// Components for your routes
+import PrivatePage from './components/PrivatePage'; // Assume this is your current App component refactored
+import SalesPage from './components/SalesPage';
+import CheckoutPage from './components/CheckoutPage';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <BrowserRouter>
+      <nav>
+        {/* Navigation Links */}
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/sales">Sales</Link> |{" "}
+        <Link to="/checkout">Checkout</Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<PrivatePage count={count} setCount={setCount} />} />
+        <Route path="/sales" element={<SalesPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
