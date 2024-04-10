@@ -5,9 +5,9 @@ function PrivatePage() {
   return (
     <div>
       <h1>Private Page</h1>
-      <Timer />
-      <Timer />
-      <Timer />
+      <Timer initialMinutes={2} initialSeconds={30} />
+      <Timer initialMinutes={2} initialSeconds={30} />
+      <Timer initialMinutes={2} initialSeconds={30} />
       {/* Add any private page-specific content here */}
     </div>
   );
