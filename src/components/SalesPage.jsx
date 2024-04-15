@@ -5,7 +5,7 @@ function SalesPage() {
     <div>
       <h1>GhostRacr</h1>
         <h3>Bold Promise section</h3>
-            <p>Gamify Life</p>
+            <p>Gamify Life & Enjoy Boring repetitive tasks</p>
             <p>Make Boring Tasks Fun Again</p>
             <p>Make Work Fun</p>
         <h3>Pain Point section</h3>
