@@ -8,6 +8,7 @@ import './App.css';
 import PrivatePage from './components/PrivatePage'; // Assume this is your current App component refactored
 import SalesPage from './components/SalesPage';
 import CheckoutPage from './components/CheckoutPage';
+import setupInputs from './components/setupInputs'
 
 function App() {
   const [count, setCount] = useState(0);
