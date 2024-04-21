@@ -4,6 +4,23 @@ const VisualTimerComponent = () => {
   const [running, setRunning] = useState(false);
   const [time, setTime] = useState(0);
   const [pause, setPause] = useState(false);
+  const [boxes, setBoxes] = useState([]);
+
+  // Function to determine color based on time
+  const getColor = (time) => {
+    const minutes = Math.floor(time / 60000); // Convert time to minutes
+    const colorIndex = minutes % 3; // There are three colors, cycle through them
+    switch (colorIndex) {
+      case 0:
+        return 'green';
+      case 1:
+        return 'blue';
+      case 2:
+        return 'yellow';
+      default:
+        return 'green'; // Default color
+    }
+  };
 
   useEffect(() => {
     let frame;
@@ -13,8 +30,19 @@ const VisualTimerComponent = () => {
       if (!lastTimestamp) lastTimestamp = timestamp;
       const delta = timestamp - lastTimestamp;
 
-      if (running && !pause && delta >= 1) {  // Update every millisecond
-        setTime(prevTime => prevTime + Math.floor(delta));
+      if (running && !pause && delta >= 1) {
+        setTime(prevTime => {
+          const updatedTime = prevTime + Math.floor(delta);
+          // Add a new box every millisecond (or every 100 milliseconds if you want fewer updates)
+          if (Math.floor(updatedTime / 1) > Math.floor(prevTime / 1)) {
+            const currentColor = getColor(updatedTime);
+            setBoxes(prevBoxes => [
+              ...prevBoxes,
+              <div key={prevBoxes.length} style={{ width: '10px', height: '10px', margin: '1px', backgroundColor: currentColor }} />
+            ]);
+          }
+          return updatedTime;
+        });
         lastTimestamp = timestamp;
       }
 
@@ -29,21 +57,9 @@ const VisualTimerComponent = () => {
   const handleStop = () => {
     setRunning(false);
     setTime(0);
+    setBoxes([]);
   };
   const handlePause = () => setPause(!pause);
-
-  const cubeStyle = {
-    width: '10px',
-    height: '10px',
-    margin: '1px',
-    display: 'inline-block',
-    backgroundColor: 'green'
-  };
-
-  const cubes = [];
-  for (let i = 0; i < time / 1000; i++) {
-    cubes.push(<div key={i} style={cubeStyle} />);
-  }
 
   return (
     <div>
@@ -54,7 +70,7 @@ const VisualTimerComponent = () => {
       </div>
       <div style={{ fontSize: '24px', margin: '20px' }}>{time} ms</div>
       <div style={{ width: '1020px', display: 'flex', flexWrap: 'wrap' }}>
-        {cubes}
+        {boxes}
       </div>
     </div>
   );
