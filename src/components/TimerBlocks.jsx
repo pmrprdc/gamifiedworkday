@@ -54,11 +54,11 @@ const TimerBlocks = () => {
         <button onClick={resetTimer}>Reset</button>
       </div>
       {blocks.map((block, index) => (
-        <div key={index} style={{ display: 'flex', flexWrap: 'wrap', width: '1000px', marginBottom: '10px' }}>
+        <div key={index} style={{ display: 'flex', flexWrap: 'wrap',height: '1000px', width: '1000px', marginBottom: '10px' }}>
           {block.map((color, idx) => (
             <div key={idx} style={{
-              width: '10px', // Set width and height to fit 100 blocks across
-              height: '10px',
+              width: '1px', // Set width and height to fit 100 blocks across
+              height: '1px',
               backgroundColor: color,
               border: '1px solid black'
             }} />
