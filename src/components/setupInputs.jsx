@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import StopWatch from './StopWatch';
+import Timer from './Timer'
 
 function TaskInput() {
   // Initialize the state with one empty task
@@ -24,11 +26,13 @@ function TaskInput() {
   return (
     <div>
       <form>
+        
         {tasks.map(task => (
           <div key={task.id}>
             <label htmlFor={`task-${task.id}`}>
               What is the task named?
             </label>
+         
             <input
               type="text"
               id={`task-${task.id}`}
@@ -36,7 +40,10 @@ function TaskInput() {
               onChange={e => handleChange(task.id, e)}
               aria-label={`Task ${task.id}`}
             />
+            
           </div>
+         
+         
         ))}
         <button type="button" onClick={addTask}>
           Add More Tasks
