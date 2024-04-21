@@ -1,0 +1,21 @@
+.timer-wrapper {
+    position: relative;
+    width: 1000px; /* Adjust width based on your preference */
+  }
+  
+  .cube {
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    position: absolute;
+    display: inline-block;
+  }
+  
+  .highlight {
+    border: 1px solid red;
+  }
+  
+  .new-row {
+    clear: both;
+    display: block;
+  }

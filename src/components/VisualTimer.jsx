@@ -1,79 +1,53 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 
-const VisualTimerComponent = () => {
-  const [running, setRunning] = useState(false);
-  const [time, setTime] = useState(0);
-  const [pause, setPause] = useState(false);
-  const [boxes, setBoxes] = useState([]);
+const TimerWrapper = styled.div`
+  position: relative;
+  width: 1000px; /* Adjust width based on your preference */
+`;
 
-  // Function to determine color based on time
-  const getColor = (time) => {
-    const minutes = Math.floor(time / 60000); // Convert time to minutes
-    const colorIndex = minutes % 3; // There are three colors, cycle through them
-    switch (colorIndex) {
-      case 0:
-        return 'green';
-      case 1:
-        return 'blue';
-      case 2:
-        return 'yellow';
-      default:
-        return 'green'; // Default color
-    }
-  };
+const Cube = styled.div`
+  width: 10px;
+  height: 10px;
+  background-color: blue;
+  position: absolute;
+  display: inline-block;
+  border: ${props => (props.index % 100 === 99 ? '1px solid red' : 'none')};
+  margin-left: ${props => `${props.index % 100 * 10}px`};
+  margin-top: ${props => `${Math.floor(props.index / 100) * 10}px`};
+`;
+
+const VisualTimer = () => {
+  const [cubes, setCubes] = useState([]);
+  const [timer, setTimer] = useState(null);
 
   useEffect(() => {
-    let frame;
-    let lastTimestamp = 0;
-
-    const frameFunction = (timestamp) => {
-      if (!lastTimestamp) lastTimestamp = timestamp;
-      const delta = timestamp - lastTimestamp;
-
-      if (running && !pause && delta >= 1) {
-        setTime(prevTime => {
-          const updatedTime = prevTime + Math.floor(delta);
-          // Add a new box every millisecond (or every 100 milliseconds if you want fewer updates)
-          if (Math.floor(updatedTime / 1) > Math.floor(prevTime / 1)) {
-            const currentColor = getColor(updatedTime);
-            setBoxes(prevBoxes => [
-              ...prevBoxes,
-              <div key={prevBoxes.length} style={{ width: '10px', height: '10px', margin: '1px', backgroundColor: currentColor }} />
-            ]);
-          }
-          return updatedTime;
-        });
-        lastTimestamp = timestamp;
+    const handleKeyPress = (event) => {
+      if (event.key === "Enter" && !timer) {
+        const newTimer = setInterval(() => {
+          setCubes(prev => [...prev, {}]);
+        }, 10);
+        setTimer(newTimer);
       }
-
-      frame = requestAnimationFrame(frameFunction);
     };
 
-    frame = requestAnimationFrame(frameFunction);
-    return () => cancelAnimationFrame(frame);
-  }, [running, pause]);
+    window.addEventListener('keydown', handleKeyPress);
 
-  const handleStart = () => setRunning(true);
-  const handleStop = () => {
-    setRunning(false);
-    setTime(0);
-    setBoxes([]);
-  };
-  const handlePause = () => setPause(!pause);
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+      if (timer) {
+        clearInterval(timer);
+      }
+    };
+  }, [timer]);
 
   return (
-    <div>
-      <div>
-        <button onClick={handleStart}>Start</button>
-        <button onClick={handleStop}>Stop</button>
-        <button onClick={handlePause}>{pause ? 'Resume' : 'Pause'}</button>
-      </div>
-      <div style={{ fontSize: '24px', margin: '20px' }}>{time} ms</div>
-      <div style={{ width: '1020px', display: 'flex', flexWrap: 'wrap' }}>
-        {boxes}
-      </div>
-    </div>
+    <TimerWrapper>
+      {cubes.map((_, index) => (
+        <Cube key={index} index={index} />
+      ))}
+    </TimerWrapper>
   );
 };
 
-export default VisualTimerComponent;
+export default VisualTimer;
