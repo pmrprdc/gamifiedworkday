@@ -4,15 +4,14 @@ import styled from 'styled-components';
 const BoxContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 2px;
+  gap: 6px; /* No gap between the boxes */
   margin-bottom: 8px;
 `;
 
 const Box = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-color: ${props => props.bgColor};
-  transition: background-color 0.3s;
 `;
 
 const Button = styled.button`
@@ -27,6 +26,13 @@ const Scoreboard = styled.div`
 
 const Score = styled.div`
   margin-right: 16px;
+  font-size: 1em; /* Adjust font size as needed */
+`;
+
+const SquareTitle = styled.h2`
+  text-align: center;
+  color: white; /* Adjust the color to fit the theme */
+  font-size: 1.5em; /* Adjust title size as needed */
 `;
 
 const VisualTimer = () => {
@@ -56,10 +62,10 @@ const VisualTimer = () => {
             return updatedSet;
           });
         });
-      }, 100);
+      }, 1); // 100ms for visual representation; adjust as needed for actual timing
     }
     return () => clearInterval(interval);
-  }, [isActive, timer, activeColorIndex]);
+  }, [isActive, timer, activeColorIndex, initialColor]);
 
   const startTimer = () => {
     setIsActive(true);
@@ -101,11 +107,14 @@ const VisualTimer = () => {
         <Button onClick={changeColor}>Change Color</Button>
       </div>
       {boxes.map((boxSet, setIndex) => (
-        <BoxContainer key={setIndex}>
-          {boxSet.map((boxColor, index) => (
-            <Box key={setIndex * 100 + index} bgColor={boxColor} />
-          ))}
-        </BoxContainer>
+        <div key={setIndex}>
+          <SquareTitle>Square {setIndex + 1}</SquareTitle>
+          <BoxContainer>
+            {boxSet.map((boxColor, index) => (
+              <Box key={setIndex * 100 + index} bgColor={boxColor} />
+            ))}
+          </BoxContainer>
+        </div>
       ))}
     </div>
   );
