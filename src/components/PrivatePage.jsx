@@ -12,11 +12,10 @@ const BoxContainer = styled.div`
 
 // Box now accepts a size prop
 const Box = styled.div`
-  width: ${props => props.size}px;
-  height: ${props => props.size}px;
-  background-color: ${props => props.bgColor};
-  margin: 0px;
-  padding: 0px;
+width: ${props => props.size}px;
+height: ${props => props.size}px;
+background-color: ${props => props.bgColor};
+transition: width 0.2s ease-in-out, height 3s ease-in-out;  
 `;
 
 const Button = styled.button`
