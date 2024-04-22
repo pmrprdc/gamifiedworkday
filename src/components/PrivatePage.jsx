@@ -6,20 +6,17 @@ const BoxContainer = styled.div`
   grid-template-columns: repeat(10, 1fr);
   gap: 6px;
   margin-bottom: 8px;
-  width: 100%;
-  justify-content: center;
 `;
 
-// Box now accepts a size prop
 const Box = styled.div`
-width: ${props => props.size}px;
-height: ${props => props.size}px;
-background-color: ${props => props.bgColor};
-transition: width 0.2s ease-in-out, height 3s ease-in-out;  
+  width: ${props => props.size}px;
+  height: ${props => props.size}px;
+  background-color: ${props => props.bgColor};
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
 `;
 
 const Button = styled.button`
-  margin-right: 20px;
+  margin-right: 8px;
 `;
 
 const Scoreboard = styled.div`
@@ -46,7 +43,7 @@ const VisualTimer = () => {
   const [boxes, setBoxes] = useState([Array(100).fill(initialColor)]);
   const [isActive, setIsActive] = useState(false);
   const [timer, setTimer] = useState(0);
-  const boxContainerRef = useRef(null);
+  const bottomRef = useRef(null);  // Ref to scroll to the bottom
 
   useEffect(() => {
     let interval = null;
@@ -73,10 +70,10 @@ const VisualTimer = () => {
   }, [isActive, timer, activeColorIndex, initialColor]);
 
   useEffect(() => {
-    if (boxContainerRef.current) {
-      boxContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (bottomRef.current) {
+      bottomRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [boxes.length]);
+  }, [boxes.length]);  // Scroll when boxes array changes
 
   const startTimer = () => {
     setIsActive(true);
@@ -101,11 +98,10 @@ const VisualTimer = () => {
     return acc;
   }, {});
 
-  // Calculate box size based on timer to decrease over time
-  const getBoxSize = () => Math.max(30 - Math.floor(timer / 20), 1); // Decrease size but maintain a minimum of 10px
+  const getBoxSize = () => Math.max(30 - Math.floor(timer / 100), 1);
 
   return (
-    <div ref={boxContainerRef}>
+    <div>
       <Scoreboard>
         {colors.map((color) => (
           <Score key={color}>
@@ -129,6 +125,7 @@ const VisualTimer = () => {
           </BoxContainer>
         </div>
       ))}
+      <div ref={bottomRef} />  {/* Invisible element to scroll to */}
     </div>
   );
 };
