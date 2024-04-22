@@ -4,11 +4,11 @@ import styled from 'styled-components';
 const BoxContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 30px; // Adjust the gap between grid items
+  gap: 25px; // Adjust the gap between grid items
   margin-bottom: 100px; // Space below the container
-  margin-right: 500px;
-  margin-left: 500px;
-  margin-top: 100px;
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-top: 20px;
   align-items: center; // Vertically aligns all items in their rows to be in the center
 `;
 
@@ -41,7 +41,7 @@ const SquareTitle = styled.h2`
 `;
 
 const VisualTimer = () => {
-  const initialColor = 'grey';
+  const initialColor = 'black';
   const colors = ['green', 'blue', 'yellow', 'pink'];
   const [activeColorIndex, setActiveColorIndex] = useState(0);
   const [boxes, setBoxes] = useState([Array(100).fill(initialColor)]);
@@ -143,12 +143,31 @@ const VisualTimer = () => {
       </div>
       {boxes.map((boxSet, setIndex) => (
         <div key={setIndex}>
-          <SquareTitle>Square {setIndex + 1}</SquareTitle>
+          
+          <SquareTitle>GhostRacr {setIndex + 1}</SquareTitle>
+          <div style={{display: "flex", flexDirection: "row"}}>
+          <div>
+        <Button onClick={startTimer}>Start</Button>
+        <Button onClick={pauseTimer}>Pause</Button>
+        <Button onClick={stopTimer}>Stop</Button>
+        <Button onClick={() => setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length)}>Change Color</Button>
+      </div>
           <BoxContainer>
+            
             {boxSet.map((boxColor, index) => (
               <Box key={setIndex * 100 + index} bgColor={boxColor} size={getBoxSize()} />
             ))}
           </BoxContainer>
+          <Scoreboard>
+        {colors.map((color) => (
+          <Score key={color}>
+            {color.charAt(0).toUpperCase() + color.slice(1)}: {colorCount[color]}
+          </Score>
+        ))}
+      </Scoreboard>
+
+          </div>
+         
         </div>
       ))}
       <div ref={bottomRef} style={{ height: '1px' }} />  {/* This is an invisible element to scroll into view */}
