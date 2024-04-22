@@ -1,21 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 const BoxContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 6px; /* No gap between the boxes */
+  gap: 6px;
   margin-bottom: 8px;
+  width: 100%;
+  justify-content: center;
 `;
 
+// Box now accepts a size prop
 const Box = styled.div`
-  width: 30px;
-  height: 30px;
+  width: ${props => props.size}px;
+  height: ${props => props.size}px;
   background-color: ${props => props.bgColor};
+  margin: 0px;
+  padding: 0px;
 `;
 
 const Button = styled.button`
-  margin-right: 8px;
+  margin-right: 20px;
 `;
 
 const Scoreboard = styled.div`
@@ -26,22 +31,23 @@ const Scoreboard = styled.div`
 
 const Score = styled.div`
   margin-right: 16px;
-  font-size: 1em; /* Adjust font size as needed */
+  font-size: 1em;
 `;
 
 const SquareTitle = styled.h2`
   text-align: center;
-  color: white; /* Adjust the color to fit the theme */
-  font-size: 1.5em; /* Adjust title size as needed */
+  color: white;
+  font-size: 1.5em;
 `;
 
 const VisualTimer = () => {
   const initialColor = 'grey';
-  const colors = ['green', 'blue', 'yellow', 'pink']; // Array to cycle through the colors
-  const [activeColorIndex, setActiveColorIndex] = useState(0); // Index to keep track of current color
+  const colors = ['green', 'blue', 'yellow', 'pink'];
+  const [activeColorIndex, setActiveColorIndex] = useState(0);
   const [boxes, setBoxes] = useState([Array(100).fill(initialColor)]);
   const [isActive, setIsActive] = useState(false);
   const [timer, setTimer] = useState(0);
+  const boxContainerRef = useRef(null);
 
   useEffect(() => {
     let interval = null;
@@ -62,10 +68,16 @@ const VisualTimer = () => {
             return updatedSet;
           });
         });
-      }, 1); // 100ms for visual representation; adjust as needed for actual timing
+      }, 100);
     }
     return () => clearInterval(interval);
   }, [isActive, timer, activeColorIndex, initialColor]);
+
+  useEffect(() => {
+    if (boxContainerRef.current) {
+      boxContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [boxes.length]);
 
   const startTimer = () => {
     setIsActive(true);
@@ -85,14 +97,16 @@ const VisualTimer = () => {
     setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length);
   };
 
-  // Count the occurrences of each color
   const colorCount = colors.reduce((acc, color) => {
     acc[color] = boxes.flat().filter(boxColor => boxColor === color).length;
     return acc;
   }, {});
 
+  // Calculate box size based on timer to decrease over time
+  const getBoxSize = () => Math.max(30 - Math.floor(timer / 20), 1); // Decrease size but maintain a minimum of 10px
+
   return (
-    <div>
+    <div ref={boxContainerRef}>
       <Scoreboard>
         {colors.map((color) => (
           <Score key={color}>
@@ -111,7 +125,7 @@ const VisualTimer = () => {
           <SquareTitle>Square {setIndex + 1}</SquareTitle>
           <BoxContainer>
             {boxSet.map((boxColor, index) => (
-              <Box key={setIndex * 100 + index} bgColor={boxColor} />
+              <Box key={setIndex * 100 + index} bgColor={boxColor} size={getBoxSize()} />
             ))}
           </BoxContainer>
         </div>
