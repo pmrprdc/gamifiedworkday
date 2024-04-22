@@ -43,7 +43,20 @@ const VisualTimer = () => {
   const [boxes, setBoxes] = useState([Array(100).fill(initialColor)]);
   const [isActive, setIsActive] = useState(false);
   const [timer, setTimer] = useState(0);
-  const bottomRef = useRef(null);  // Ref to scroll to the bottom
+  const bottomRef = useRef(null);
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.code === 'Space') {
+        setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [colors.length]); // Should depend on colors.length which is static and hence safe
 
   useEffect(() => {
     let interval = null;
@@ -67,13 +80,13 @@ const VisualTimer = () => {
       }, 100);
     }
     return () => clearInterval(interval);
-  }, [isActive, timer, activeColorIndex, initialColor]);
+  }, [isActive, timer, activeColorIndex, colors]); // Ensure to depend on colors itself to avoid stale closure issues
 
   useEffect(() => {
     if (bottomRef.current) {
       bottomRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [boxes.length]);  // Scroll when boxes array changes
+  }, [boxes.length]);
 
   const startTimer = () => {
     setIsActive(true);
@@ -89,16 +102,12 @@ const VisualTimer = () => {
     setBoxes([Array(100).fill(initialColor)]);
   };
 
-  const changeColor = () => {
-    setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length);
-  };
-
   const colorCount = colors.reduce((acc, color) => {
     acc[color] = boxes.flat().filter(boxColor => boxColor === color).length;
     return acc;
   }, {});
 
-  const getBoxSize = () => Math.max(30 - Math.floor(timer / 100), 1);
+  const getBoxSize = () => Math.max(30 - Math.floor(timer / 20), 1);
 
   return (
     <div>
@@ -113,7 +122,7 @@ const VisualTimer = () => {
         <Button onClick={startTimer}>Start</Button>
         <Button onClick={pauseTimer}>Pause</Button>
         <Button onClick={stopTimer}>Stop</Button>
-        <Button onClick={changeColor}>Change Color</Button>
+        <Button onClick={() => setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length)}>Change Color</Button>
       </div>
       {boxes.map((boxSet, setIndex) => (
         <div key={setIndex}>
@@ -125,9 +134,10 @@ const VisualTimer = () => {
           </BoxContainer>
         </div>
       ))}
-      <div ref={bottomRef} />  {/* Invisible element to scroll to */}
+      <div ref={bottomRef} style={{ height: '1px' }} />  {/* This is an invisible element to scroll into view */}
     </div>
   );
 };
 
 export default VisualTimer;
+
