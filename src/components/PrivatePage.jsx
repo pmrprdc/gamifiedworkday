@@ -4,15 +4,19 @@ import styled from 'styled-components';
 const BoxContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 6px;
-  margin-bottom: 8px;
+  gap: 30px; // Adjust the gap between grid items
+  margin-bottom: 100px; // Space below the container
+  margin-right: 500px;
+  margin-left: 500px;
+  margin-top: 100px;
+  align-items: center; // Vertically aligns all items in their rows to be in the center
 `;
 
 const Box = styled.div`
   width: ${props => props.size}px;
   height: ${props => props.size}px;
   background-color: ${props => props.bgColor};
-  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  transition: width 1s ease-in-out, height 1s ease-in-out;
 `;
 
 const Button = styled.button`
@@ -62,26 +66,39 @@ const VisualTimer = () => {
     let interval = null;
     if (isActive) {
       interval = setInterval(() => {
-        setTimer(prevTimer => prevTimer + 1);
+        setTimer(prevTimer => prevTimer + 1);  // Increment timer
         setBoxes(prevBoxes => {
-          const totalBoxes = prevBoxes.flat().length;
-          if (totalBoxes === timer + 1) {
-            return [...prevBoxes, Array(100).fill(initialColor)];
-          }
-          return prevBoxes.map((boxSet, setIndex) => {
-            if (setIndex < prevBoxes.length - 1 || totalBoxes === timer) {
+          // Update box colors based on timer
+          const boxIndex = timer % 100;  // This will be from 0 to 99
+          const setIndex = Math.floor(timer / 100);  // Calculate which set of 100 we're updating
+  
+          if (boxIndex === 99) {
+            // If we are at the last box in the current set, prepare to add a new set in the next tick
+            return prevBoxes.map((boxSet, index) => {
+              if (index === setIndex) {
+                let updatedSet = [...boxSet];
+                updatedSet[boxIndex] = colors[activeColorIndex];  // Update the last box
+                return updatedSet;
+              }
               return boxSet;
-            }
-            const updatedSet = [...boxSet];
-            updatedSet[timer % 100] = colors[activeColorIndex];
-            return updatedSet;
-          });
+            }).concat([Array(100).fill(initialColor)]);  // Add a new set of boxes
+          } else {
+            // Normal update within the set
+            return prevBoxes.map((boxSet, index) => {
+              if (index === setIndex) {
+                let updatedSet = [...boxSet];
+                updatedSet[boxIndex] = colors[activeColorIndex];
+                return updatedSet;
+              }
+              return boxSet;
+            });
+          }
         });
       }, 100);
     }
     return () => clearInterval(interval);
-  }, [isActive, timer, activeColorIndex, colors]); // Ensure to depend on colors itself to avoid stale closure issues
-
+  }, [isActive, timer, activeColorIndex, colors]);
+  
   useEffect(() => {
     if (bottomRef.current) {
       bottomRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -107,7 +124,7 @@ const VisualTimer = () => {
     return acc;
   }, {});
 
-  const getBoxSize = () => Math.max(30 - Math.floor(timer / 20), 1);
+  const getBoxSize = () => Math.max(30 - Math.floor(timer / 100), 50);
 
   return (
     <div>
