@@ -42,7 +42,7 @@ const SquareTitle = styled.h2`
 
 const VisualTimer = () => {
   const initialColor = 'black';
-  const colors = ['green', 'blue', 'yellow', 'pink'];
+  const colors = ['#4285F4', '#EA4336', '#33A853', '#FABD05'];
   const [activeColorIndex, setActiveColorIndex] = useState(0);
   const [boxes, setBoxes] = useState([Array(100).fill(initialColor)]);
   const [isActive, setIsActive] = useState(false);
