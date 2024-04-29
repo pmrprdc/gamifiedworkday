@@ -17,12 +17,12 @@ function App() {
     <BrowserRouter>
       <nav>
         {/* Navigation Links */}
-        <Link to="/">Home</Link> |{" "}
+        <Link to="/private">Private</Link> |{" "}
         <Link to="/sales">Sales</Link> |{" "}
         <Link to="/checkout">Checkout</Link>
       </nav>
       <Routes>
-        <Route path="/" element={<PrivatePage count={count} setCount={setCount} />} />
+        <Route path="/private" element={<PrivatePage count={count} setCount={setCount} />} />
         <Route path="/sales" element={<SalesPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
       </Routes>

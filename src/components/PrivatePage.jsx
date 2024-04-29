@@ -50,21 +50,10 @@ const VisualTimer = () => {
   const [timer, setTimer] = useState(0);
   const bottomRef = useRef(null);
 
-  function startTimer() {
-    setIsActive(true);
-  }
-
-  function pauseTimer() {
-    setIsActive(false);
-  }
-
-  function stopTimer() {
-    setIsActive(false);
-    setTimer(0);
-    setBoxes([Array(100).fill(initialColor)]);
-  }
-
   useEffect(() => {
+    // Set focus to the body to ensure key events are captured
+    document.body.focus();
+
     const handleKeyPress = (event) => {
       if (event.code === 'Space') {
         setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length);
@@ -77,7 +66,7 @@ const VisualTimer = () => {
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, [colors.length, pauseTimer]);  // Make sure to pass pauseTimer here
+  }, [colors.length, pauseTimer]);
 
   useEffect(() => {
     let interval = null;
@@ -117,6 +106,20 @@ const VisualTimer = () => {
       bottomRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [boxes.length]);
+
+  function startTimer() {
+    setIsActive(true);
+  }
+
+  function pauseTimer() {
+    setIsActive(false);
+  }
+
+  function stopTimer() {
+    setIsActive(false);
+    setTimer(0);
+    setBoxes([Array(100).fill(initialColor)]);
+  }
 
   const colorCount = colors.reduce((acc, color) => {
     acc[color] = boxes.flat().filter(boxColor => boxColor === color).length;
