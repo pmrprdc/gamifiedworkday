@@ -11,6 +11,7 @@ function SalesPage() {
             <p>Gradually increase work volume while avoiding fatigue</p>
             <p>Gradually increase work speed and efficiency</p>
             <p>track work consistency and adjust work frequency tips section</p>
+            <p>INCREASE WORK CAPACITY</p>
         <h3>Pain Point section</h3>
             <p>Not being able to get enough work done</p>
             <p>Struggle Starting Tasks</p>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-
+import MatrixBox from './Racing';
 const BoxContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -128,6 +128,7 @@ const VisualTimer = () => {
 
   return (
     <div>
+      <MatrixBox />
       <Scoreboard>
         {colors.map((color) => (
           <Score key={color}>
