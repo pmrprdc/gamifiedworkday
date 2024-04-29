@@ -1,21 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import MatrixBox from './Racing';
+
 const BoxContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 25px; // Adjust the gap between grid items
-  margin-bottom: 100px; // Space below the container
+  gap: 25px;
+  margin-bottom: 100px;
   margin-right: 100px;
   margin-left: 100px;
   margin-top: 20px;
-  align-items: center; // Vertically aligns all items in their rows to be in the center
+  align-items: center;
 `;
 
 const Box = styled.div`
   width: ${props => props.size}px;
   height: ${props => props.size}px;
-  background-color: ${props => props.bgColor};
+  background-color: ${props => props.$bgColor};
   transition: width 1s ease-in-out, height 1s ease-in-out;
 `;
 
@@ -49,10 +50,26 @@ const VisualTimer = () => {
   const [timer, setTimer] = useState(0);
   const bottomRef = useRef(null);
 
+  function startTimer() {
+    setIsActive(true);
+  }
+
+  function pauseTimer() {
+    setIsActive(false);
+  }
+
+  function stopTimer() {
+    setIsActive(false);
+    setTimer(0);
+    setBoxes([Array(100).fill(initialColor)]);
+  }
+
   useEffect(() => {
     const handleKeyPress = (event) => {
       if (event.code === 'Space') {
         setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length);
+      } else if (event.code === 'Enter') {
+        pauseTimer();
       }
     };
 
@@ -60,30 +77,26 @@ const VisualTimer = () => {
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, [colors.length]); // Should depend on colors.length which is static and hence safe
+  }, [colors.length, pauseTimer]);  // Make sure to pass pauseTimer here
 
   useEffect(() => {
     let interval = null;
     if (isActive) {
       interval = setInterval(() => {
-        setTimer(prevTimer => prevTimer + 1);  // Increment timer
+        setTimer(prevTimer => prevTimer + 1);
         setBoxes(prevBoxes => {
-          // Update box colors based on timer
-          const boxIndex = timer % 100;  // This will be from 0 to 99
-          const setIndex = Math.floor(timer / 100);  // Calculate which set of 100 we're updating
-  
+          const boxIndex = timer % 100;
+          const setIndex = Math.floor(timer / 100);
           if (boxIndex === 99) {
-            // If we are at the last box in the current set, prepare to add a new set in the next tick
             return prevBoxes.map((boxSet, index) => {
               if (index === setIndex) {
                 let updatedSet = [...boxSet];
-                updatedSet[boxIndex] = colors[activeColorIndex];  // Update the last box
+                updatedSet[boxIndex] = colors[activeColorIndex];
                 return updatedSet;
               }
               return boxSet;
-            }).concat([Array(100).fill(initialColor)]);  // Add a new set of boxes
+            }).concat([Array(100).fill(initialColor)]);
           } else {
-            // Normal update within the set
             return prevBoxes.map((boxSet, index) => {
               if (index === setIndex) {
                 let updatedSet = [...boxSet];
@@ -98,26 +111,12 @@ const VisualTimer = () => {
     }
     return () => clearInterval(interval);
   }, [isActive, timer, activeColorIndex, colors]);
-  
+
   useEffect(() => {
     if (bottomRef.current) {
       bottomRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [boxes.length]);
-
-  const startTimer = () => {
-    setIsActive(true);
-  };
-
-  const pauseTimer = () => {
-    setIsActive(false);
-  };
-
-  const stopTimer = () => {
-    setIsActive(false);
-    setTimer(0);
-    setBoxes([Array(100).fill(initialColor)]);
-  };
 
   const colorCount = colors.reduce((acc, color) => {
     acc[color] = boxes.flat().filter(boxColor => boxColor === color).length;
@@ -144,37 +143,19 @@ const VisualTimer = () => {
       </div>
       {boxes.map((boxSet, setIndex) => (
         <div key={setIndex}>
-          
           <SquareTitle>GhostRacr {setIndex + 1}</SquareTitle>
-          <div style={{display: "flex", flexDirection: "row"}}>
-          <div>
-        <Button onClick={startTimer}>Start</Button>
-        <Button onClick={pauseTimer}>Pause</Button>
-        <Button onClick={stopTimer}>Stop</Button>
-        <Button onClick={() => setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length)}>Change Color</Button>
-      </div>
-          <BoxContainer>
-            
-            {boxSet.map((boxColor, index) => (
-              <Box key={setIndex * 100 + index} bgColor={boxColor} size={getBoxSize()} />
-            ))}
-          </BoxContainer>
-          <Scoreboard>
-        {colors.map((color) => (
-          <Score key={color}>
-            {color.charAt(0).toUpperCase() + color.slice(1)}: {colorCount[color]}
-          </Score>
-        ))}
-      </Scoreboard>
-
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <BoxContainer>
+              {boxSet.map((boxColor, index) => (
+                <Box key={setIndex * 100 + index} $bgColor={boxColor} size={getBoxSize()} />
+              ))}
+            </BoxContainer>
           </div>
-         
         </div>
       ))}
-      <div ref={bottomRef} style={{ height: '1px' }} />  {/* This is an invisible element to scroll into view */}
+      <div ref={bottomRef} style={{ height: '1px' }} />
     </div>
   );
 };
 
 export default VisualTimer;
-
