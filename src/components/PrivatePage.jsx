@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import MatrixBox from './Racing';
+import MatrixBox from './MatrixBox';
 
 const BoxContainer = styled.div`
   display: grid;
@@ -130,7 +130,7 @@ const VisualTimer = () => {
 
   return (
     <div>
-      <MatrixBox />
+      
       <Scoreboard>
         {colors.map((color) => (
           <Score key={color}>
@@ -157,6 +157,7 @@ const VisualTimer = () => {
         </div>
       ))}
       <div ref={bottomRef} style={{ height: '1px' }} />
+      <MatrixBox />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import StopWatch from './StopWatch';
-import Timer from './Timer'
+import StopWatch from '../StopWatch';
+import Timer from '../Timer'
 
 function TaskInput() {
   // Initialize the state with one empty task

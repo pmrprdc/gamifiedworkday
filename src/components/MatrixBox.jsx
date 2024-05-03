@@ -14,7 +14,7 @@ const MatrixBox = () => {
 
     return (
         <div style={matrixStyle}>
-            <h1>This is where the recorded track is raced against</h1>
+            <h1>RaceMatrix</h1>
         </div>
     );
 };
