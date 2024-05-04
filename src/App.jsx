@@ -5,10 +5,9 @@ import viteLogo from '/vite.svg';
 import './App.css';
 
 // Components for your routes
-import PrivatePage from './components/PrivatePage'; // Assume this is your current App component refactored
-import SalesPage from './components/SalesPage';
-import CheckoutPage from './components/CheckoutPage';
-import setupInputs from './components/ARCHIVES/setupInputs'
+import PrivatePage from './components/PRIVATE/PrivatePage'; // Assume this is your current App component refactored
+import SalesPage from './components/SALES/SalesPage';
+import CheckoutPage from './components/CHECKOUT/CheckoutPage';
 
 function App() {
   const [count, setCount] = useState(0);
