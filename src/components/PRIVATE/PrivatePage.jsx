@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import MatrixBox from './MatrixBox';
 
 const BoxContainer = styled.div`
   display: grid;
@@ -157,7 +156,7 @@ const VisualTimer = () => {
         </div>
       ))}
       <div ref={bottomRef} style={{ height: '1px' }} />
-      <MatrixBox />
+     
     </div>
   );
 };
