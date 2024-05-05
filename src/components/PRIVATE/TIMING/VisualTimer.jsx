@@ -6,8 +6,8 @@ const BoxContainer = styled.div`
   grid-template-columns: repeat(10, 1fr);
   gap: 25px;
   margin-bottom: 100px;
-  margin-right: 100px;
-  margin-left: 100px;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: 20px;
   align-items: center;
 `;
@@ -95,7 +95,7 @@ const VisualTimer = () => {
             });
           }
         });
-      }, 100);
+      }, 60);
     }
     return () => clearInterval(interval);
   }, [isActive, timer, activeColorIndex, colors]);
@@ -112,6 +112,7 @@ const VisualTimer = () => {
 
   function pauseTimer() {
     setIsActive(false);
+
   }
 
   function stopTimer() {
@@ -125,12 +126,12 @@ const VisualTimer = () => {
     return acc;
   }, {});
 
-  const getBoxSize = () => Math.max(30 - Math.floor(timer / 100), 50);
+  const getBoxSize = () => Math.max(30 - Math.floor(timer / 100), 30);
 
   return (
-    <div>
+    <div >
       
-      <Scoreboard>
+      <Scoreboard >
         {colors.map((color) => (
           <Score key={color}>
             {color.charAt(0).toUpperCase() + color.slice(1)}: {colorCount[color]}
@@ -146,12 +147,12 @@ const VisualTimer = () => {
       {boxes.map((boxSet, setIndex) => (
         <div key={setIndex}>
           <SquareTitle>GhostRacr {setIndex + 1}</SquareTitle>
-          <div style={{ display: "flex", flexDirection: "row" }}>
+          <div  style={{ display: "flex", flexDirection: "row" }}>
             <BoxContainer>
               {boxSet.map((boxColor, index) => (
                 <Box key={setIndex * 100 + index} $bgColor={boxColor} size={getBoxSize()} />
               ))}
-            </BoxContainer>
+            </BoxContainer >
           </div>
         </div>
       ))}
