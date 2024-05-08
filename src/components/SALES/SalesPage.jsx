@@ -35,14 +35,9 @@ function SalesPage() {
       <Title>GhostRacr</Title>
       <Section>
         <ImagePlaceholder />
-        <SubTitle>Bold Promise section</SubTitle>
-        <p>Gamify Life & Enjoy Boring repetitive tasks</p>
-        <p>Make Boring Tasks Fun Again</p>
-        <p>Make Work Fun</p>
-        <p>Gradually increase work volume while avoiding fatigue</p>
-        <p>Gradually increase work speed and efficiency</p>
-        <p>Track work consistency and adjust work frequency tips section</p>
-        <p>INCREASE WORK CAPACITY</p>
+
+        <p>Gamify Life & Make Work Fun</p>
+        <p>Gradually increase work capacity while avoiding fatigue</p>
       </Section>
       <Section>
         <ImagePlaceholder />

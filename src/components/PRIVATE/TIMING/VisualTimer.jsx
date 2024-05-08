@@ -56,7 +56,7 @@ const VisualTimer = () => {
     const handleKeyPress = (event) => {
       if (event.code === 'Space') {
         setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length);
-      } else if (event.code === 'Enter') {
+      } else if (event.code === 'p') {
         pauseTimer();
       }
     };
@@ -65,7 +65,7 @@ const VisualTimer = () => {
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, [colors.length, pauseTimer]);
+  }, [colors.length]);
 
   useEffect(() => {
     let interval = null;
