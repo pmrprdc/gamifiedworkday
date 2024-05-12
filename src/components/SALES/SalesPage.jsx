@@ -25,7 +25,7 @@ const SubTitle = styled.h3`
 
 const ImagePlaceholder = styled.div`
   height: 200px;
-  background: url('path_to_neo_image.jpg') center/cover no-repeat;
+  background: url('src/assets/sales1.png') center/cover no-repeat;
   margin-bottom: 15px;
 `;
 
