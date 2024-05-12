@@ -29,14 +29,18 @@ const ImagePlaceholder = styled.div`
   margin-bottom: 15px;
 `;
 
+const SalesSection1 = styled.div`
+  height: 200px;
+  background: url('src/assets/sales1.png') center/cover no-repeat;
+  margin-bottom: 15px;
+`;
+
 function SalesPage() {
   return (
     <PageContainer>
       <Title>GhostRacr</Title>
       <Section>
-        <ImagePlaceholder />
-
-        <p>Gamify Life & Make Work Fun</p>
+        <SalesSection1 />
         <p>Gradually increase work capacity while avoiding fatigue</p>
       </Section>
       <Section>
