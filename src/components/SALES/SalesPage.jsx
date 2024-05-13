@@ -50,27 +50,29 @@ function SalesPage() {
     <p><strong>Difficulty Implementing Habits:</strong> You know you need better habits to succeed, but it's tough going it alone. Join countless others who have turned their potential into performance by adopting proven strategies. Don't miss out on transforming your work habits and skyrocketing your productivity.</p>
 </Section>
 
-      <Section>
-        <ImagePlaceholder />
-        <SubTitle>Benefits section</SubTitle>
-        <p>Get more work done</p>
-        <p>Get the same work done faster and faster over time</p>
-        <p>Get more enjoyment out of doing your work</p>
-      </Section>
-      <Section>
-        <ImagePlaceholder />
-        <SubTitle>The Solution Discovery section</SubTitle>
-        <p>I had ambition, intelligent ideas, excellent at making plans but suffered greatly in execution</p>
-        <p>I knew that if I had a team under me I could potentially do great things but I couldn't even function enough to do any respectable output</p>
-        <p>I failed for years to execute things fast enough</p>
-        <p>Based on my workouts, I was realising I never did enough volume and intensity</p>
-        <p>I tried many routines yet I always felt that I could be doing more</p>
-        <p>It became more and more obvious that I had a terrible time with outputting work</p>
-        <p>I was diagnosed with ADHD however I could not handle how the ADHD meds made me feel</p>
-        <p>I learned from Healthy GamerGG what I was really doing</p>
-        <p>Explain GamerGG ADHD behavior</p>
-        <p>Then I recalled how I gamified my workouts and my body was really the only thing I could show for in results even though I'd been studying business.</p>
-      </Section>
+<Section>
+    <ImagePlaceholder />
+    <SubTitle>Benefits section</SubTitle>
+    <p><strong>Amplify Your Productivity:</strong> Join the ranks of high achievers who consistently outperform their peers. Our tools help you get more work done, propelling you towards your goals faster than you thought possible.</p>
+    <p><strong>Accelerate Efficiency:</strong> Experience a dramatic increase in speed as you master tasks more quickly over time. Just like the many users who have doubled their productivity, you'll find yourself completing tasks faster, giving you back precious time every day.</p>
+    <p><strong>Enhance Work Enjoyment:</strong> Transform your work into a source of satisfaction. Our users report a significant increase in enjoyment as they achieve their tasks with ease, making every workday a rewarding experience.</p>
+    <p><strong>Commit to Excellence:</strong> By choosing our solution, you're not just improving your workflow—you're investing in a proven path to success. Embrace the commitment to your professional growth and join a community that values peak performance and satisfaction.</p>
+</Section>
+
+<Section>
+    <ImagePlaceholder />
+    <SubTitle>The Solution Discovery Section</SubTitle>
+    <p><strong>Unrealized Potential:</strong> Despite my ambition, intelligent ideas, and excellent planning skills, execution was my stumbling block. I had the vision, but struggled to turn it into reality.</p>
+    <p><strong>Acknowledging the Challenge:</strong> I knew I could lead and achieve great things if I could just get past my own barriers. Yet, I consistently found myself unable to produce work at the level I knew I was capable of.</p>
+    <p><strong>Years of Frustration:</strong> For years, I failed to meet my own expectations, always falling short on speed and execution, much like many high-potential individuals I later discovered shared my plight.</p>
+    <p><strong>A Clue in Physical Exertion:</strong> My breakthrough began in an unexpected realm—fitness. Reflecting on my workouts, I realized I wasn't reaching the necessary volume or intensity, paralleling my work habits.</p>
+    <p><strong>Searching for Solutions:</strong> I tried numerous productivity methods and routines, yet always felt I could do more, pushing me to keep searching for that elusive key to unlock my productivity.</p>
+    <p><strong>A Personal Revelation:</strong> Over time, it became painfully clear: my productivity was hampered significantly. Diagnosed with ADHD, I struggled with traditional medications which were not suitable for me.</p>
+    <p><strong>Insights from Healthy GamerGG:</strong> It was insights from Healthy GamerGG that illuminated my understanding of my behaviors. Learning from others facing similar challenges offered me new perspectives on managing ADHD effectively without medication.</p>
+    <p><strong>Epiphany Through Gamification:</strong> Remembering how I successfully gamified my fitness routine, I applied similar strategies to my work. This was a game-changer, leading to a transformation in my productivity and proving that even without traditional paths, success was within reach.</p>
+    <p><strong>Commitment to Self-Improvement:</strong> Armed with these new tools and a community of like-minded individuals, I've turned my struggles into strengths, proving that with the right approach, every challenge can be overcome.</p>
+</Section>
+
       <Section>
         <ImagePlaceholder />
         <SubTitle>Solution Introduction</SubTitle>
