@@ -2,6 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Define styled components
+
+
+const Button = styled.button`
+  width: 50%;
+  background-color: black;
+  color: white; // Setting the text color to white for visibility
+  border: 2px solid green;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: green;
+    color: black;
+  }
+`;
+
+
 const PageContainer = styled.div`
   color: green;
   background-color: black;
@@ -11,6 +28,9 @@ const PageContainer = styled.div`
 const Section = styled.div`
   margin: 20px;
   padding: 15px;
+  margin-left: 200px;
+  margin-right: 200px;
+
 `;
 
 const Title = styled.h1`
@@ -31,12 +51,14 @@ const ImagePlaceholder = styled.div`
 function SalesPage() {
   return (
     <PageContainer>
+    
       <Title>GhostRacr</Title>
       <Section>
         <ImagePlaceholder />
 
         <p>Gamify Life & Make Work Fun</p>
         <p>Gradually increase work capacity while avoiding fatigue</p>
+        <Button>Buy Now</Button> 
       </Section>
       <Section>
     <ImagePlaceholder />
@@ -50,15 +72,17 @@ function SalesPage() {
     <p><strong>Difficulty Implementing Habits:</strong> You know you need better habits to succeed, but it's tough going it alone. Join countless others who have turned their potential into performance by adopting proven strategies. Don't miss out on transforming your work habits and skyrocketing your productivity.</p>
 </Section>
 
+<Button>Buy Now</Button> 
 <Section>
     <ImagePlaceholder />
+   
     <SubTitle>Benefits section</SubTitle>
     <p><strong>Amplify Your Productivity:</strong> Join the ranks of high achievers who consistently outperform their peers. Our tools help you get more work done, propelling you towards your goals faster than you thought possible.</p>
     <p><strong>Accelerate Efficiency:</strong> Experience a dramatic increase in speed as you master tasks more quickly over time. Just like the many users who have doubled their productivity, you'll find yourself completing tasks faster, giving you back precious time every day.</p>
     <p><strong>Enhance Work Enjoyment:</strong> Transform your work into a source of satisfaction. Our users report a significant increase in enjoyment as they achieve their tasks with ease, making every workday a rewarding experience.</p>
     <p><strong>Commit to Excellence:</strong> By choosing our solution, you're not just improving your workflow—you're investing in a proven path to success. Embrace the commitment to your professional growth and join a community that values peak performance and satisfaction.</p>
 </Section>
-
+<Button>Buy Now</Button> 
 <Section>
     <ImagePlaceholder />
     <SubTitle>The Solution Discovery Section</SubTitle>
@@ -72,7 +96,7 @@ function SalesPage() {
     <p><strong>Epiphany Through Gamification:</strong> Remembering how I successfully gamified my fitness routine, I applied similar strategies to my work. This was a game-changer, leading to a transformation in my productivity and proving that even without traditional paths, success was within reach.</p>
     <p><strong>Commitment to Self-Improvement:</strong> Armed with these new tools and a community of like-minded individuals, I've turned my struggles into strengths, proving that with the right approach, every challenge can be overcome.</p>
 </Section>
-
+<Button>Buy Now</Button> 
       <Section>
         <ImagePlaceholder />
         <SubTitle>Solution Introduction</SubTitle>
@@ -86,24 +110,29 @@ function SalesPage() {
         <p>Now there is a baseline to race against next time</p>
         <p>We sprinkle more visual cues and stuff to make it a habit</p>
       </Section>
+      <Button>Buy Now</Button> 
       <Section>
         <ImagePlaceholder />
         <SubTitle>Social Proof & Testimonials</SubTitle>
         <p>I tried ghostracr as an entrepreneur and gamified boxing, unboxing and packaging duties. It keeps me in line, and it was great - YAYA owner of Richards Variety Store</p>
       </Section>
+      <Button>Buy Now</Button> 
       <Section>
         <ImagePlaceholder />
         <SubTitle>Reminder of What's Included</SubTitle>
         <p>Remember! Once you get ghostracr, you're getting a timer that allows you to race against yourself in daily tasks</p>
         <p>Soccer moms use it, entrepreneurs use it and it's a part of a greater productivity system</p>
       </Section>
+      <Button>Buy Now</Button> 
       <Section>
         <ImagePlaceholder />
         <SubTitle>FAQ</SubTitle>
         <p>Who is ghostracr for?</p>
         <p>Entrepreneurs looking to get their work done faster</p>
       </Section>
+      <Button>Buy Now</Button> 
     </PageContainer>
+    
   );
 }
 
