@@ -39,13 +39,17 @@ function SalesPage() {
         <p>Gradually increase work capacity while avoiding fatigue</p>
       </Section>
       <Section>
-        <ImagePlaceholder />
-        <SubTitle>Pain Point section</SubTitle>
-        <p>Not being able to get enough work done</p>
-        <p>Struggle Starting Tasks</p>
-        <p>Trouble engaging with tasks too easy</p>
-        <p>Fail to implement habits on your own</p>
-      </Section>
+    <ImagePlaceholder />
+   
+    <p>Getting work done can be tough, and you're not alone. Across the globe, thousands of professionals admit that not getting enough work done is even worse, creating a cycle of stress and underachievement.</p>
+    
+    <p><strong>Struggle Starting Tasks:</strong> Ever noticed how the most successful people seem to dive right into their tasks? It's not just natural ability – they've mastered the art of starting. Without this skill, you're always one step behind.</p>
+    
+    <p><strong>Trouble Engaging with Simple Tasks:</strong> It’s easy to overlook simple tasks, but often, they're the building blocks of major projects. When engagement fails, productivity stalls. Don’t let the simplicity fool you; mastery of these tasks is a common trait among industry leaders.</p>
+    
+    <p><strong>Difficulty Implementing Habits:</strong> You know you need better habits to succeed, but it's tough going it alone. Join countless others who have turned their potential into performance by adopting proven strategies. Don't miss out on transforming your work habits and skyrocketing your productivity.</p>
+</Section>
+
       <Section>
         <ImagePlaceholder />
         <SubTitle>Benefits section</SubTitle>
