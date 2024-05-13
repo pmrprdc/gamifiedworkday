@@ -25,13 +25,18 @@ const SubTitle = styled.h3`
 
 const ImagePlaceholder = styled.div`
   height: 200px;
-  background: url('src/assets/sales1.png') center/cover no-repeat;
+  background: url('') center/cover no-repeat;
   margin-bottom: 15px;
 `;
 
 const SalesSection1 = styled.div`
   height: 200px;
   background: url('src/assets/sales1.png') center/cover no-repeat;
+  margin-bottom: 15px;
+`;
+const SalesSection2 = styled.div`
+  height: 200px;
+  background: url('src/assets/sales2.png') center/cover no-repeat;
   margin-bottom: 15px;
 `;
 
@@ -44,7 +49,7 @@ function SalesPage() {
         <p>Gradually increase work capacity while avoiding fatigue</p>
       </Section>
       <Section>
-        <ImagePlaceholder />
+        <SalesSection2 />
         <SubTitle>Pain Point section</SubTitle>
         <p>Not being able to get enough work done</p>
         <p>Struggle Starting Tasks</p>
