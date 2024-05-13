@@ -9,7 +9,6 @@ const PageContainer = styled.div`
 `;
 
 const Section = styled.div`
-  border: 2px solid green;
   margin: 20px;
   padding: 15px;
 `;
@@ -25,18 +24,7 @@ const SubTitle = styled.h3`
 
 const ImagePlaceholder = styled.div`
   height: 200px;
-  background: url('') center/cover no-repeat;
-  margin-bottom: 15px;
-`;
-
-const SalesSection1 = styled.div`
-  height: 200px;
-  background: url('src/assets/sales1.png') center/cover no-repeat;
-  margin-bottom: 15px;
-`;
-const SalesSection2 = styled.div`
-  height: 200px;
-  background: url('src/assets/sales2.png') center/cover no-repeat;
+  background: url('path_to_neo_image.jpg') center/cover no-repeat;
   margin-bottom: 15px;
 `;
 
@@ -45,11 +33,13 @@ function SalesPage() {
     <PageContainer>
       <Title>GhostRacr</Title>
       <Section>
-        <SalesSection1 />
+        <ImagePlaceholder />
+
+        <p>Gamify Life & Make Work Fun</p>
         <p>Gradually increase work capacity while avoiding fatigue</p>
       </Section>
       <Section>
-        <SalesSection2 />
+        <ImagePlaceholder />
         <SubTitle>Pain Point section</SubTitle>
         <p>Not being able to get enough work done</p>
         <p>Struggle Starting Tasks</p>
