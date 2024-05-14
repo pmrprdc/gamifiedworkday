@@ -4,9 +4,9 @@ import MatrixEffect from '../MatrixEffect'; // Adjust the path as necessary if i
 
 const PrivatePage = () => {
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100vh' }}>  // Ensure the container div is properly sized
+    <div style={{ position: 'relative', width: '100%', height: '100vh', opacity:'80%'}}>  
       <MatrixEffect />
-      <div style={{ position: 'relative', zIndex: 1 }}>  // Make content sit on top of the background
+      <div style={{ position: 'relative', zIndex: 0 }}>  
         <h1>Private Page</h1>
         <VisualTimer />
       </div>

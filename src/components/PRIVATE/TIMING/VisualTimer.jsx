@@ -7,20 +7,22 @@ const BoxContainer = styled.div`
   gap: 25px;
   margin-bottom: 100px;
   margin-right: auto;
-  margin-left: auto;
+  margin-left: 100px;
   margin-top: 20px;
   align-items: center;
 `;
+
 
 const Box = styled.div`
   width: ${props => props.size}px;
   height: ${props => props.size}px;
   background-color: ${props => props.$bgColor};
   transition: width 1s ease-in-out, height 1s ease-in-out;
+  border: 1px solid white;
 `;
 
 const Button = styled.button`
-  width: 50%;
+  width: 100%;
   background-color: black;
   color: white; // Setting the text color to white for visibility
   border: 2px solid green;
@@ -41,7 +43,8 @@ const Scoreboard = styled.div`
 
 const Score = styled.div`
   margin-right: 16px;
-  font-size: 1em;
+  font-size: rem;
+  color: green;
 `;
 
 const SquareTitle = styled.h2`
@@ -136,28 +139,30 @@ const VisualTimer = () => {
     return acc;
   }, {});
 
-  const getBoxSize = () => Math.max(30 - Math.floor(timer / 100), 30);
+  const getBoxSize = () => Math.max(30 - Math.floor(timer / 10), 10);
 
   return (
     <div >
       
-      <Scoreboard >
+    
+    
+      {boxes.map((boxSet, setIndex) => (
+        <div key={setIndex}>
+          <SquareTitle>GhostRacr {setIndex + 1}</SquareTitle>
+          <div  style={{ display: "flex", flexDirection: "row" }}>
+          <div>
+        <Button onClick={startTimer}>Start</Button>
+        <Button onClick={pauseTimer}>Pause</Button>
+        <Button onClick={stopTimer}>Stop</Button>
+        <Button onClick={() => setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length)}>Change Color</Button>
+        <Scoreboard >
         {colors.map((color) => (
           <Score key={color}>
             {color.charAt(0).toUpperCase() + color.slice(1)}: {colorCount[color]}
           </Score>
         ))}
       </Scoreboard>
-      <div>
-        <Button onClick={startTimer}>Start</Button>
-        <Button onClick={pauseTimer}>Pause</Button>
-        <Button onClick={stopTimer}>Stop</Button>
-        <Button onClick={() => setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length)}>Change Color</Button>
       </div>
-      {boxes.map((boxSet, setIndex) => (
-        <div key={setIndex}>
-          <SquareTitle>GhostRacr {setIndex + 1}</SquareTitle>
-          <div  style={{ display: "flex", flexDirection: "row" }}>
             <BoxContainer>
               {boxSet.map((boxColor, index) => (
                 <Box key={setIndex * 100 + index} $bgColor={boxColor} size={getBoxSize()} />
