@@ -38,13 +38,14 @@ const Button = styled.button`
 const Scoreboard = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 8px;
+  margin-bottom: 200px;
+
 `;
 
 const Score = styled.div`
   margin-right: 16px;
-  font-size: rem;
-  color: green;
+  font-size: 1rem;
+
 `;
 
 const SquareTitle = styled.h2`
@@ -61,6 +62,12 @@ const VisualTimer = () => {
   const [isActive, setIsActive] = useState(false);
   const [timer, setTimer] = useState(0);
   const bottomRef = useRef(null);
+  const colorNames = {
+    '#4285F4': 'Blue',
+    '#EA4336': 'Red',
+    '#33A853': 'Green',
+    '#FABD05': 'Yellow'
+  };
 
   useEffect(() => {
     // Set focus to the body to ensure key events are captured
@@ -149,19 +156,26 @@ const VisualTimer = () => {
       {boxes.map((boxSet, setIndex) => (
         <div key={setIndex}>
           <SquareTitle>GhostRacr {setIndex + 1}</SquareTitle>
-          <div  style={{ display: "flex", flexDirection: "row" }}>
           <div>
+        
+      </div>
+      
+          <div  style={{ display: "flex", flexDirection: "row" }}>
+            
+          <div >
+          <Scoreboard style={{ display: "flex", flexDirection: "row"}} >
+        {colors.map((color) => (
+          <Score key={color} style={{color: `${color}`}}>
+            {colorNames[color]}: {colorCount[color]}
+          </Score>
+          
+        ))}
+      </Scoreboard>
         <Button onClick={startTimer}>Start</Button>
         <Button onClick={pauseTimer}>Pause</Button>
         <Button onClick={stopTimer}>Stop</Button>
         <Button onClick={() => setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length)}>Change Color</Button>
-        <Scoreboard >
-        {colors.map((color) => (
-          <Score key={color}>
-            {color.charAt(0).toUpperCase() + color.slice(1)}: {colorCount[color]}
-          </Score>
-        ))}
-      </Scoreboard>
+        
       </div>
             <BoxContainer>
               {boxSet.map((boxColor, index) => (
