@@ -4,12 +4,13 @@ import styled from 'styled-components';
 const BoxContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  gap: 25px;
-  margin-bottom: 100px;
-  margin-right: auto;
+  gap: 10px;
+  margin-bottom: 400px;
+  margin-right: 200px;
   margin-left: 100px;
   margin-top: 20px;
   align-items: center;
+
 `;
 
 
@@ -19,6 +20,7 @@ const Box = styled.div`
   background-color: ${props => props.$bgColor};
   transition: width 1s ease-in-out, height 1s ease-in-out;
   border: 1px solid white;
+  margin-right: 2px;
 `;
 
 const Button = styled.button`
@@ -29,6 +31,8 @@ const Button = styled.button`
   font-size: 16px;
   padding: 10px 20px;
   cursor: pointer;
+
+ 
   &:hover {
     background-color: green;
     color: black;
@@ -36,6 +40,8 @@ const Button = styled.button`
 `;
 
 const Scoreboard = styled.div`
+  margin-left: 100px;
+  margin-right: 100px;
   display: flex;
   justify-content: center;
   margin-bottom: 200px;
@@ -49,9 +55,10 @@ const Score = styled.div`
 `;
 
 const SquareTitle = styled.h2`
-  text-align: center;
+  text-align: left;
   color: white;
   font-size: 1.5em;
+  margin-left:50px;
 `;
 
 const VisualTimer = () => {
@@ -146,7 +153,7 @@ const VisualTimer = () => {
     return acc;
   }, {});
 
-  const getBoxSize = () => Math.max(30 - Math.floor(timer / 10), 10);
+  const getBoxSize = () => Math.max(30 - Math.floor(timer / 20), 10);
 
   return (
     <div >
