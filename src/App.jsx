@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import MatrixEffect from './components/MatrixEffect'; // Make sure to import the MatrixEffect
+
 
 // Components for your routes
 import PrivatePage from './components/PRIVATE/PrivatePage'; // Assume this is your current App component refactored
@@ -13,19 +15,21 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <BrowserRouter>
-      <nav>
-        {/* Navigation Links */}
-        <Link to="/private">Private</Link> |{" "}
-        <Link to="/sales">Sales</Link> |{" "}
-        <Link to="/checkout">Checkout</Link>
-      </nav>
-      <Routes>
-        <Route path="/private" element={<PrivatePage count={count} setCount={setCount} />} />
-        <Route path="/sales" element={<SalesPage />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
-      </Routes>
-    </BrowserRouter>
+    <div style={{ position: 'relative' }}> {/* Ensuring that the background is covered by other contents */}
+      <MatrixEffect /> {/* This will run the Matrix background effect */}
+      <BrowserRouter>
+        <nav>
+          <Link to="/private">Private</Link> |{" "}
+          <Link to="/sales">Sales</Link> |{" "}
+          <Link to="/checkout">Checkout</Link>
+        </nav>
+        <Routes>
+          <Route path="/private" element={<PrivatePage count={count} setCount={setCount} />} />
+          <Route path="/sales" element={<SalesPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

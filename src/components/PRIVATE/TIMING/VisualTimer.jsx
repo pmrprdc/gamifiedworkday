@@ -20,7 +20,17 @@ const Box = styled.div`
 `;
 
 const Button = styled.button`
-  margin-right: 8px;
+  width: 50%;
+  background-color: black;
+  color: white; // Setting the text color to white for visibility
+  border: 2px solid green;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: green;
+    color: black;
+  }
 `;
 
 const Scoreboard = styled.div`
