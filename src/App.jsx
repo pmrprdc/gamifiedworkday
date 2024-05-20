@@ -18,7 +18,7 @@ function App() {
     <div style={{ position: 'relative' }}> {/* Ensuring that the background is covered by other contents */}
       <MatrixEffect /> {/* This will run the Matrix background effect */}
       <BrowserRouter>
-        <nav>
+        <nav style={{border: "2px solid red", zIndex:"1"}}> 
           <Link to="/private">Private</Link> |{" "}
           <Link to="/sales">Sales</Link> |{" "}
           <Link to="/checkout">Checkout</Link>

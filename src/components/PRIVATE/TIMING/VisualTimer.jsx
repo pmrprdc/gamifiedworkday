@@ -182,7 +182,7 @@ const VisualTimer = () => {
         <Button onClick={pauseTimer}>Pause</Button>
         <Button onClick={stopTimer}>Stop</Button>
         <Button onClick={() => setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length)}>Change Color</Button>
-        
+       
       </div>
             <BoxContainer>
               {boxSet.map((boxColor, index) => (
@@ -193,7 +193,6 @@ const VisualTimer = () => {
         </div>
       ))}
       <div ref={bottomRef} style={{ height: '1px' }} />
-     
     </div>
   );
 };
