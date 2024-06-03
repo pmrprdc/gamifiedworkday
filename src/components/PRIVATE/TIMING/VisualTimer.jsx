@@ -69,7 +69,8 @@ const VisualTimer = () => {
   const [isActive, setIsActive] = useState(false);
   const [timer, setTimer] = useState(0);
   const bottomRef = useRef(null);
-  const tasksToTime = [];
+  const [inputText, setInputText]=useState("");
+  const [tasksToTime, setTasksToTime] = useState([]);
   const colorNames = {
     '#4285F4': 'Blue',
     '#EA4336': 'Red',
@@ -156,9 +157,17 @@ const VisualTimer = () => {
 
   const getBoxSize = () => Math.max(30 - Math.floor(timer / 20), 20);
 
-  const taskSubmitHandler = () => {
+
+  const taskInputHandler = (e) => {
+    setInputText(e.target.value)
+  }
+
+  const taskSubmitHandler = (e) => {
 
     console.log("TaskSubmitHandler Has Run")
+    setTasksToTime([...tasksToTime, inputText])
+    setInputText("");
+    console.log(tasksToTime)
 
   }
 
@@ -166,11 +175,17 @@ const VisualTimer = () => {
     <div >
       <label>
         Insert Task to time
-      <input type='text'/>
+      <input value={inputText} onChange={taskInputHandler} type='text'/>
       </label>
      
       <button onClick={taskSubmitHandler}>submit</button>
-    
+      <h3>Tasks</h3>
+
+
+      {tasksToTime.map((task) => (
+       <h1 key={task}>{task}</h1>
+))}
+     
     
       {boxes.map((boxSet, setIndex) => (
         <div key={setIndex}>
