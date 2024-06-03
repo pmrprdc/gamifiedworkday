@@ -4,7 +4,7 @@ function CheckoutPage() {
   return (
     <div>
       <h1>Checkout Page</h1>
-      {/* Add any checkout-specific content here */}
+      <p>Thank you for purchasing ghostRacr, here are the next steps! </p>
     </div>
   );
 }

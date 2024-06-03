@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 
 // Define styled components
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
 
 const Button = styled.button`
   width: 50%;
@@ -51,14 +56,18 @@ const ImagePlaceholder = styled.div`
 function SalesPage() {
   return (
     <PageContainer>
-    
+      
       <Title>GhostRacr</Title>
       <Section>
         <ImagePlaceholder />
 
         <p>Gamify Life & Make Work Fun</p>
         <p>Gradually increase work capacity while avoiding fatigue</p>
-        <Button>Buy Now</Button> 
+
+
+        <StyledLink to="https://buy.stripe.com/7sI6pp6TvgDG7u0eUU">
+          <Button>Buy Now</Button>
+        </StyledLink>
       </Section>
       <Section>
     <ImagePlaceholder />
@@ -72,7 +81,9 @@ function SalesPage() {
     <p><strong>Difficulty Implementing Habits:</strong> You know you need better habits to succeed, but it's tough going it alone. Join countless others who have turned their potential into performance by adopting proven strategies. Don't miss out on transforming your work habits and skyrocketing your productivity.</p>
 </Section>
 
-<Button>Buy Now</Button> 
+<StyledLink to="https://buy.stripe.com/7sI6pp6TvgDG7u0eUU">
+          <Button>Buy Now</Button>
+        </StyledLink>
 <Section>
     <ImagePlaceholder />
    
@@ -82,7 +93,7 @@ function SalesPage() {
     <p><strong>Enhance Work Enjoyment:</strong> Transform your work into a source of satisfaction. Our users report a significant increase in enjoyment as they achieve their tasks with ease, making every workday a rewarding experience.</p>
     <p><strong>Commit to Excellence:</strong> By choosing our solution, you're not just improving your workflow—you're investing in a proven path to success. Embrace the commitment to your professional growth and join a community that values peak performance and satisfaction.</p>
 </Section>
-<Button>Buy Now</Button> 
+<Button >Buy Now</Button> 
 <Section>
     <ImagePlaceholder />
     <SubTitle>The Solution Discovery Section</SubTitle>
