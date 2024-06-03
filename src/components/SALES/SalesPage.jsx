@@ -62,17 +62,18 @@ function SalesPage() {
         <ImagePlaceholder />
 
         <p>Gamify Life & Make Work Fun</p>
-        <p>Gradually increase work capacity while avoiding fatigue</p>
+        <p>Work Faster & Longer By Racing Against Yourself</p>
 
 
         <StyledLink to="https://buy.stripe.com/7sI6pp6TvgDG7u0eUU">
           <Button>Buy Now</Button>
         </StyledLink>
+
       </Section>
       <Section>
     <ImagePlaceholder />
    
-    <p>Getting work done can be tough, and you're not alone. Across the globe, thousands of professionals admit that not getting enough work done is even worse, creating a cycle of stress and underachievement.</p>
+    <p>Getting work done can be tough but you're not alone. Across the globe, thousands of professionals admit that not getting enough work done is even worse, creating a cycle of stress and underachievement.</p>
     
     <p><strong>Struggle Starting Tasks:</strong> Ever noticed how the most successful people seem to dive right into their tasks? It's not just natural ability – they've mastered the art of starting. Without this skill, you're always one step behind.</p>
     
