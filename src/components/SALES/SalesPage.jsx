@@ -1,9 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
+import image from '../../assets/ghostracr.jpg'
 
 // Define styled components
+
+
+
+
+const StyledBanner = styled.img`
+width: 50%;
+border: 2px solid red;
+margin: 0 auto;`
 
 
 
@@ -66,8 +74,8 @@ function SalesPage() {
       
       <Title>GhostRacr</Title>
       <Section>
-        <ImagePlaceholder />
-
+        
+        <StyledBanner src={image} />
         <p>Gamify Life & Make Work Fun</p>
         <p>Work Faster & Longer By Racing Against Yourself</p>
 
