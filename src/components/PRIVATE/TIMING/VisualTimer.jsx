@@ -154,7 +154,13 @@ const VisualTimer = () => {
     return acc;
   }, {});
 
-  const getBoxSize = () => Math.max(30 - Math.floor(timer / 20), 10);
+  const getBoxSize = () => Math.max(30 - Math.floor(timer / 20), 20);
+
+  const taskSubmitHandler = () => {
+
+    console.log("TaskSubmitHandler Has Run")
+
+  }
 
   return (
     <div >
@@ -163,7 +169,7 @@ const VisualTimer = () => {
       <input type='text'/>
       </label>
      
-      <button>submit</button>
+      <button onClick={taskSubmitHandler}>submit</button>
     
     
       {boxes.map((boxSet, setIndex) => (
