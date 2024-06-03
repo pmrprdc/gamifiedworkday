@@ -5,6 +5,13 @@ import { Link } from 'react-router-dom';
 
 // Define styled components
 
+
+
+const StyledProblems = styled.div`
+display: flex;
+flex-direction: row;
+`
+
 const StyledLink = styled(Link)`
   text-decoration: none;
 `;
@@ -73,13 +80,45 @@ function SalesPage() {
       <Section>
     <ImagePlaceholder />
    
-    <p>Getting work done can be tough but you're not alone. Across the globe, thousands of professionals admit that not getting enough work done is even worse, creating a cycle of stress and underachievement.</p>
+    <p>Getting work done can be tough but you're not alone. Across the globe,
+       thousands of professionals admit that not getting enough work done is even worse, 
+       creating a cycle of stress and underachievement.
+       GhostRacr was designed to gamify tasks and focus your distracted mind so you can get more done! </p>
+    <StyledProblems>
+
+      <div>
+      <h3>Struggle Starting Tasks:</h3>
+      <p>
+    Ever noticed how the most successful people seem to dive right into their tasks?
+     It's not just natural ability – they've mastered the art of starting. Without
+      this skill, you're always one step behind.</p>
+      </div>
+  
     
-    <p><strong>Struggle Starting Tasks:</strong> Ever noticed how the most successful people seem to dive right into their tasks? It's not just natural ability – they've mastered the art of starting. Without this skill, you're always one step behind.</p>
     
-    <p><strong>Trouble Engaging with Simple Tasks:</strong> It’s easy to overlook simple tasks, but often, they're the building blocks of major projects. When engagement fails, productivity stalls. Don’t let the simplicity fool you; mastery of these tasks is a common trait among industry leaders.</p>
+
+  
+   <div>
+
+    <h3>Trouble Engaging with simple tasks</h3>
+   <p>
+    It’s easy to overlook simple tasks, but often, they're the building blocks of major projects.
+     When engagement fails, productivity stalls. Don’t let the simplicity fool you;
+      mastery of these tasks is a common trait among industry leaders.</p>
+
+   </div>
+
+   <div>
+    <h3>Difficulty Implementing Habits</h3>
+   <p>
+     You know you need better habits to succeed, but it's tough going it 
+     alone. Join countless others who have turned their potential into performance by 
+     adopting proven strategies. Don't miss out on transforming your work habits and skyrocketin
+     g your productivity.</p>
+   </div>
     
-    <p><strong>Difficulty Implementing Habits:</strong> You know you need better habits to succeed, but it's tough going it alone. Join countless others who have turned their potential into performance by adopting proven strategies. Don't miss out on transforming your work habits and skyrocketing your productivity.</p>
+
+    </StyledProblems>
 </Section>
 
 <StyledLink to="https://buy.stripe.com/7sI6pp6TvgDG7u0eUU">
