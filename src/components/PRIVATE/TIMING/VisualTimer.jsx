@@ -69,6 +69,7 @@ const VisualTimer = () => {
   const [isActive, setIsActive] = useState(false);
   const [timer, setTimer] = useState(0);
   const bottomRef = useRef(null);
+  const tasksToTime = [];
   const colorNames = {
     '#4285F4': 'Blue',
     '#EA4336': 'Red',
@@ -157,7 +158,12 @@ const VisualTimer = () => {
 
   return (
     <div >
-      
+      <label>
+        Insert Task to time
+      <input type='text'/>
+      </label>
+     
+      <button>submit</button>
     
     
       {boxes.map((boxSet, setIndex) => (
