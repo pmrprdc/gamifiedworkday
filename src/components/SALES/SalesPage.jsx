@@ -145,15 +145,10 @@ function SalesPage() {
 <Section>
     <ImagePlaceholder />
     <SubTitle>The Solution Discovery Section</SubTitle>
-    <p><strong>Unrealized Potential:</strong> Despite my ambition, intelligent ideas, and excellent planning skills, execution was my stumbling block. I had the vision, but struggled to turn it into reality.</p>
-    <p><strong>Acknowledging the Challenge:</strong> I knew I could lead and achieve great things if I could just get past my own barriers. Yet, I consistently found myself unable to produce work at the level I knew I was capable of.</p>
-    <p><strong>Years of Frustration:</strong> For years, I failed to meet my own expectations, always falling short on speed and execution, much like many high-potential individuals I later discovered shared my plight.</p>
-    <p><strong>A Clue in Physical Exertion:</strong> My breakthrough began in an unexpected realm—fitness. Reflecting on my workouts, I realized I wasn't reaching the necessary volume or intensity, paralleling my work habits.</p>
-    <p><strong>Searching for Solutions:</strong> I tried numerous productivity methods and routines, yet always felt I could do more, pushing me to keep searching for that elusive key to unlock my productivity.</p>
-    <p><strong>A Personal Revelation:</strong> Over time, it became painfully clear: my productivity was hampered significantly. Diagnosed with ADHD, I struggled with traditional medications which were not suitable for me.</p>
-    <p><strong>Insights from Healthy GamerGG:</strong> It was insights from Healthy GamerGG that illuminated my understanding of my behaviors. Learning from others facing similar challenges offered me new perspectives on managing ADHD effectively without medication.</p>
-    <p><strong>Epiphany Through Gamification:</strong> Remembering how I successfully gamified my fitness routine, I applied similar strategies to my work. This was a game-changer, leading to a transformation in my productivity and proving that even without traditional paths, success was within reach.</p>
-    <p><strong>Commitment to Self-Improvement:</strong> Armed with these new tools and a community of like-minded individuals, I've turned my struggles into strengths, proving that with the right approach, every challenge can be overcome.</p>
+    <p>Despite my ambition, intelligent ideas, and excellent planning skills, I consistently found myself unable to produce work at the level I knew I was capable of. I had the vision but struggled to turn it into reality as my brain was not adept at wiring new habits. I found myself lost in a whirlwind of my own ideas, plans, and opportunities.</p>
+<p>My breakthrough began in an unexpected realm—fitness. Reflecting on my workouts, I realized I wasn't reaching the necessary volume or intensity, paralleling my work habits. Diagnosed with ADHD, I struggled with traditional medications, which were not suitable for my health. Everything felt twice as hard, if not more.</p>
+<p>Remembering how I successfully gamified my fitness routine, I applied similar strategies to my work. This was a game-changer, leading to a transformation in my productivity and proving that even without traditional paths, success was within reach.</p>
+<p>As I worked on my own productivity using these principles, I sought a smooth and easy way to gamify the process. That's when I started building Ghost Racr so that I could monitor my stats and work with timers and visual ques. I was playing my own game and enjoying it.</p>
 </Section>
 <Button>Buy Now</Button> 
       <Section>
