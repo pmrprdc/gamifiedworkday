@@ -63,6 +63,8 @@ const SquareTitle = styled.h2`
 
 const VisualTimer = () => {
   const initialColor = 'black';
+  const [inputColor, setInputColor] = useState('#000000');
+
   const colors = ['#4285F4'];
   const [activeColorIndex, setActiveColorIndex] = useState(0);
   const [boxes, setBoxes] = useState([Array(100).fill(initialColor)]);
@@ -169,11 +171,19 @@ const VisualTimer = () => {
 
   }
 
+  const taskColorHandler = (e) => {
+    setInputColor(e.target.value);
+  };
+
   return (
     <div >
       <label>
         Insert Task to time
       <input value={inputText} onChange={taskInputHandler} type='text'/>
+      </label>
+      <label>
+        Insert Task color
+        <input value={inputColor} onChange={taskColorHandler} type='color' />
       </label>
       <button onClick={taskSubmitHandler}>submit</button>
       <h3>Tasks</h3>
