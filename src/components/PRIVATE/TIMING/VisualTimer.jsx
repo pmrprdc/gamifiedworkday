@@ -63,14 +63,14 @@ const SquareTitle = styled.h2`
 
 const VisualTimer = () => {
   const initialColor = 'black';
-  const colors = ['#4285F4', '#EA4336', '#33A853', '#FABD05'];
+  const colors = ['#4285F4'];
   const [activeColorIndex, setActiveColorIndex] = useState(0);
   const [boxes, setBoxes] = useState([Array(100).fill(initialColor)]);
   const [isActive, setIsActive] = useState(false);
   const [timer, setTimer] = useState(0);
   const bottomRef = useRef(null);
   const [inputText, setInputText]=useState("");
-  const [tasksToTime, setTasksToTime] = useState([]);
+  const [tasksToTime, setTasksToTime] = useState(['#4285F4']);
   const colorNames = {
     '#4285F4': 'Blue',
     '#EA4336': 'Red',
@@ -84,7 +84,7 @@ const VisualTimer = () => {
 
     const handleKeyPress = (event) => {
       if (event.code === 'Space') {
-        setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length);
+        setActiveColorIndex(prevIndex => (prevIndex + 1) % tasksToTime.length);
       } else if (event.code === 'p') {
         pauseTimer();
       }
@@ -94,7 +94,7 @@ const VisualTimer = () => {
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
     };
-  }, [colors.length]);
+  }, [tasksToTime.length]);
 
   useEffect(() => {
     let interval = null;
@@ -108,7 +108,7 @@ const VisualTimer = () => {
             return prevBoxes.map((boxSet, index) => {
               if (index === setIndex) {
                 let updatedSet = [...boxSet];
-                updatedSet[boxIndex] = colors[activeColorIndex];
+                updatedSet[boxIndex] = tasksToTime[activeColorIndex];
                 return updatedSet;
               }
               return boxSet;
@@ -117,7 +117,7 @@ const VisualTimer = () => {
             return prevBoxes.map((boxSet, index) => {
               if (index === setIndex) {
                 let updatedSet = [...boxSet];
-                updatedSet[boxIndex] = colors[activeColorIndex];
+                updatedSet[boxIndex] = tasksToTime[activeColorIndex];
                 return updatedSet;
               }
               return boxSet;
@@ -127,7 +127,7 @@ const VisualTimer = () => {
       }, 60);
     }
     return () => clearInterval(interval);
-  }, [isActive, timer, activeColorIndex, colors]);
+  }, [isActive, timer, activeColorIndex, setTasksToTime]);
 
   useEffect(() => {
     if (bottomRef.current) {
@@ -150,7 +150,7 @@ const VisualTimer = () => {
     setBoxes([Array(100).fill(initialColor)]);
   }
 
-  const colorCount = colors.reduce((acc, color) => {
+  const colorCount = tasksToTime.reduce((acc, color) => {
     acc[color] = boxes.flat().filter(boxColor => boxColor === color).length;
     return acc;
   }, {});
@@ -163,8 +163,6 @@ const VisualTimer = () => {
   }
 
   const taskSubmitHandler = (e) => {
-
-    console.log("TaskSubmitHandler Has Run")
     setTasksToTime([...tasksToTime, inputText])
     setInputText("");
     console.log(tasksToTime)
@@ -177,11 +175,8 @@ const VisualTimer = () => {
         Insert Task to time
       <input value={inputText} onChange={taskInputHandler} type='text'/>
       </label>
-     
       <button onClick={taskSubmitHandler}>submit</button>
       <h3>Tasks</h3>
-
-
       {tasksToTime.map((task) => (
        <h1 key={task}>{task}</h1>
 ))}
@@ -198,7 +193,7 @@ const VisualTimer = () => {
             
           <div >
           <Scoreboard style={{ display: "flex", flexDirection: "row"}} >
-        {colors.map((color) => (
+        {tasksToTime.map((color) => (
           <Score key={color} style={{color: `${color}`}}>
             {colorNames[color]}: {colorCount[color]}
           </Score>
@@ -208,7 +203,7 @@ const VisualTimer = () => {
         <Button onClick={startTimer}>Start</Button>
         <Button onClick={pauseTimer}>Pause</Button>
         <Button onClick={stopTimer}>Stop</Button>
-        <Button onClick={() => setActiveColorIndex(prevIndex => (prevIndex + 1) % colors.length)}>Change Color</Button>
+        <Button onClick={() => setActiveColorIndex(prevIndex => (prevIndex + 1) % tasksToTime.length)}>Change Color</Button>
        
       </div>
             <BoxContainer>
