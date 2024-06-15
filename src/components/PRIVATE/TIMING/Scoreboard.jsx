@@ -25,6 +25,12 @@ const TaskInputField = styled.input`
   margin-bottom: 10px;
 `;
 
+const Button = styled.button`
+width: 200x;
+length: 50px;
+
+`
+
 const Scoreboard = ({ tasks, setTasks }) => {
   const [inputText, setInputText] = useState("");
   const [inputColor, setInputColor] = useState("#000000");

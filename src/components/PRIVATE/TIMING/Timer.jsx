@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import TimerController from './TimerController';
-import Scoreboard from './Scoreboard';
+import Controller from './Controller'; // Make sure this path is correct
+import Scoreboard from './Scoreboard'; // Make sure this path is correct
 
 const BoxContainer = styled.div`
   display: grid;
@@ -43,33 +43,38 @@ const Timer = ({ tasks, setTasks }) => {
     if (isActive) {
       interval = setInterval(() => {
         setTimer(prevTimer => prevTimer + 1);
-        setBoxes(prevBoxes => {
-          const boxIndex = timer % 100;
-          const setIndex = Math.floor(timer / 100);
-          if (boxIndex === 99) {
-            return prevBoxes.map((boxSet, index) => {
-              if (index === setIndex && tasks[activeColorIndex]) {
-                let updatedSet = [...boxSet];
-                updatedSet[boxIndex] = tasks[activeColorIndex].color;
-                return updatedSet;
-              }
-              return boxSet;
-            }).concat([Array(100).fill(initialColor)]);
-          } else {
-            return prevBoxes.map((boxSet, index) => {
-              if (index === setIndex && tasks[activeColorIndex]) {
-                let updatedSet = [...boxSet];
-                updatedSet[boxIndex] = tasks[activeColorIndex].color;
-                return updatedSet;
-              }
-              return boxSet;
-            });
-          }
-        });
       }, 60);
+    } else {
+      clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [isActive, timer, activeColorIndex, tasks]);
+  }, [isActive]);
+
+  useEffect(() => {
+    setBoxes(prevBoxes => {
+      const boxIndex = timer % 100;
+      const setIndex = Math.floor(timer / 100);
+      if (boxIndex === 99) {
+        return prevBoxes.map((boxSet, index) => {
+          if (index === setIndex && tasks[activeColorIndex]) {
+            let updatedSet = [...boxSet];
+            updatedSet[boxIndex] = tasks[activeColorIndex].color;
+            return updatedSet;
+          }
+          return boxSet;
+        }).concat([Array(100).fill(initialColor)]);
+      } else {
+        return prevBoxes.map((boxSet, index) => {
+          if (index === setIndex && tasks[activeColorIndex]) {
+            let updatedSet = [...boxSet];
+            updatedSet[boxIndex] = tasks[activeColorIndex].color;
+            return updatedSet;
+          }
+          return boxSet;
+        });
+      }
+    });
+  }, [timer, tasks, activeColorIndex]);
 
   useEffect(() => {
     if (bottomRef.current) {
@@ -85,7 +90,7 @@ const Timer = ({ tasks, setTasks }) => {
         <div key={setIndex}>
           <SquareTitle>GhostRacr {setIndex + 1}</SquareTitle>
           <div style={{ display: "flex", flexDirection: "row" }}>
-            <TimerController
+            <Controller
               startTimer={() => setIsActive(true)}
               pauseTimer={() => setIsActive(false)}
               stopTimer={() => {
