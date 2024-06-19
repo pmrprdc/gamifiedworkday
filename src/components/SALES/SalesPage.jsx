@@ -50,6 +50,8 @@ const Section = styled.div`
   padding: 15px;
   margin-left: 200px;
   margin-right: 200px;
+  max-width: 50%;
+  margin: 0 auto;
 
 `;
 
@@ -145,6 +147,10 @@ function SalesPage() {
 <Section>
     <ImagePlaceholder />
     <SubTitle>The Solution Discovery Section</SubTitle>
+
+
+
+
     <p>Despite my ambition, intelligent ideas, and excellent planning skills, I consistently found myself unable to produce work at the level I knew I was capable of. I had the vision but struggled to turn it into reality as my brain was not adept at wiring new habits. I found myself lost in a whirlwind of my own ideas, plans, and opportunities.</p>
 <p>My breakthrough began in an unexpected realm—fitness. Reflecting on my workouts, I realized I wasn't reaching the necessary volume or intensity, paralleling my work habits. Diagnosed with ADHD, I struggled with traditional medications, which were not suitable for my health. Everything felt twice as hard, if not more.</p>
 <p>Remembering how I successfully gamified my fitness routine, I applied similar strategies to my work. This was a game-changer, leading to a transformation in my productivity and proving that even without traditional paths, success was within reach.</p>
@@ -160,9 +166,52 @@ function SalesPage() {
       <Section>
         <ImagePlaceholder />
         <SubTitle>Solution Breakdown</SubTitle>
-        <p>It all starts with measuring how long things take</p>
-        <p>Now there is a baseline to race against next time</p>
-        <p>We sprinkle more visual cues and stuff to make it a habit</p>
+        <div class="solution-breakdown">
+    <h2>Solution Breakdown</h2>
+    <p>When you log in to GhostRacr, you embark on a journey of productivity and fun. Here's how it works:</p>
+
+    <h3>1. Set Up and Record Tasks</h3>
+    <ul>
+        <li><strong>Timer and Task Manager:</strong> Begin by setting up your tasks and starting the timer. GhostRacr allows you to log each activity, ensuring you have a clear record of what needs to be done.</li>
+        <li><strong>Real-Time Feedback:</strong> As you work, you'll receive real-time feedback, helping you stay focused and engaged.</li>
+    </ul>
+
+    <h3>2. Race Against Your Past</h3>
+    <ul>
+        <li><strong>Baseline Creation:</strong> Every task you record establishes a baseline. This means you'll always have a previous performance to race against, turning each task into an exciting challenge.</li>
+        <li><strong>Progress Tracking:</strong> Track your progress over time. See how you improve with each session and get motivated by your own advancements.</li>
+    </ul>
+
+    <h3>3. Visual Cues and Habit Formation</h3>
+    <ul>
+        <li><strong>Gamified Elements:</strong> GhostRacr incorporates visual cues and gamification techniques to make habit formation enjoyable. Color-coded progress bars, achievement badges, and leaderboards keep you motivated.</li>
+        <li><strong>Habit Streaks:</strong> Maintain and grow your habit streaks. The more consistent you are, the more rewards you unlock, making productivity a game you’ll love playing.</li>
+    </ul>
+
+    <h3>4. Data Analysis and Interval Training</h3>
+    <ul>
+        <li><strong>Comprehensive Analytics:</strong> After completing tasks, dive into detailed analytics. GhostRacr provides insights into your performance, helping you identify patterns and areas for improvement.</li>
+        <li><strong>Interval Training:</strong> Use your data to set up interval training for your habits. This feature allows you to break tasks into manageable intervals, increasing efficiency and making work less daunting.</li>
+    </ul>
+
+    <h3>5. Community and Support</h3>
+    <ul>
+        <li><strong>Join a Community:</strong> Connect with other users who share similar goals. Exchange tips, participate in challenges, and find accountability partners within the GhostRacr community.</li>
+        <li><strong>Expert Guidance:</strong> Access expert tips and strategies for maximizing your productivity. Our resources are designed to help you get the most out of GhostRacr.</li>
+    </ul>
+
+    <h3>What You'll Receive</h3>
+    <ul>
+        <li><strong>Comprehensive Task Management System:</strong> A platform that helps you organize and track your tasks efficiently.</li>
+        <li><strong>Engaging Gamification Features:</strong> Tools that make working fun and help you stay motivated.</li>
+        <li><strong>In-Depth Performance Analytics:</strong> Insights that help you understand and improve your productivity.</li>
+        <li><strong>Supportive Community:</strong> A network of like-minded individuals and experts to support your journey.</li>
+        <li><strong>Personal Growth Tools:</strong> Features designed to help you develop and maintain effective habits.</li>
+    </ul>
+
+    <p>By breaking down tasks and incorporating fun, interactive elements, GhostRacr transforms your daily routines into exciting challenges, helping you achieve more and enjoy the process.</p>
+</div>
+
       </Section>
       <Button>Buy Now</Button> 
       <Section>
