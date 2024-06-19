@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import image from '../../assets/ghostracr.jpg'
+import FaqPage from './FaqPage';
+
 
 // Define styled components
 
@@ -71,6 +73,9 @@ const ImagePlaceholder = styled.div`
 `;
 
 function SalesPage() {
+
+
+  
   return (
     <PageContainer>
       
@@ -160,8 +165,45 @@ function SalesPage() {
       <Section>
         <ImagePlaceholder />
         <SubTitle>Solution Introduction</SubTitle>
-        <p>Once I realised gamifying my workouts worked, I thought what if it works with my computer tasks.</p>
-        <p>I wanted to race against myself regardless. Something about it makes me engage and having intentions makes a difference.</p>
+        <div class="solution-introduction">
+    <h2>Solution Introduction</h2>
+    <p>Have you ever struggled with motivation, especially when it comes to deep work? You're not alone. Many people find it almost physically impossible to focus, leading to cycles of burnout, stress, boredom, and guilt. GhostRacr was designed to tackle these exact issues through a unique approach that combines gamification and data-driven insights.</p>
+    
+    <h3>Why GhostRacr Works</h3>
+    
+    <h4>Tackling Deep Procrastination</h4>
+    <p>Deep procrastination occurs when you find yourself unable to muster the motivation to start or complete tasks. This can be due to a lack of intrinsic motivation or overwhelming workload. GhostRacr addresses this by:</p>
+    <ul>
+        <li><strong>Breaking Down Tasks:</strong> By logging tasks and using a timer, GhostRacr breaks down large projects into manageable chunks, making them less daunting.</li>
+        <li><strong>Creating a Baseline:</strong> Each recorded task establishes a performance baseline, allowing you to race against your past achievements. This adds an element of excitement and competition to your work, which can help you overcome the inertia of starting.</li>
+    </ul>
+    
+    <h4>Combating Dopamine Sickness</h4>
+    <p>Our brains are bombarded with constant distractions, which can make it hard to focus on more complex, longer tasks. GhostRacr helps you combat this by:</p>
+    <ul>
+        <li><strong>Providing Real-Time Feedback:</strong> Instant feedback on your performance keeps you engaged and helps your brain stay focused on the task at hand.</li>
+        <li><strong>Incorporating Gamified Elements:</strong> Visual cues, progress bars, and achievement badges turn work into a game, making it more enjoyable and less of a chore.</li>
+    </ul>
+    
+    <h3>How GhostRacr Is Effective</h3>
+    
+    <h4>Building Intrinsic Motivation</h4>
+    <p>Intrinsic motivation comes from within and is essential for sustained productivity. GhostRacr enhances this by:</p>
+    <ul>
+        <li><strong>Setting Clear Goals:</strong> By providing a clear framework for your tasks and progress, GhostRacr helps you see the direct impact of your work on your goals.</li>
+        <li><strong>Creating a Sense of Achievement:</strong> Each completed task and achieved milestone boosts your confidence and motivation, reinforcing positive behavior.</li>
+    </ul>
+    
+    <h4>Ensuring Continuous Improvement</h4>
+    <p>Continuous improvement is key to long-term success. GhostRacr facilitates this through:</p>
+    <ul>
+        <li><strong>Detailed Analytics:</strong> After recording your tasks, GhostRacr provides in-depth analytics to help you understand your performance patterns and areas for improvement.</li>
+        <li><strong>Interval Training for Habits:</strong> Use your performance data to set up interval training for your habits. This structured approach helps you build and maintain productive habits over time.</li>
+    </ul>
+    
+    <p>By combining these elements, GhostRacr not only makes work more engaging but also helps you develop the skills and habits necessary for long-term productivity and success.</p>
+</div>
+
       </Section>
       <Section>
         <ImagePlaceholder />
@@ -230,6 +272,7 @@ function SalesPage() {
       <Section>
         <ImagePlaceholder />
         <SubTitle>FAQ</SubTitle>
+        <FaqPage />
         <p>Who is ghostracr for?</p>
         <p>Entrepreneurs looking to get their work done faster</p>
       </Section>
