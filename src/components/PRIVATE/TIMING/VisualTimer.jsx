@@ -1,4 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import styled from 'styled-components';
+
+const TimerContainer = styled.div`
+  text-align: center;
+  font-size: 2em;
+  color: red;
+  font-family: 'Courier New', Courier, monospace;
+`;
 
 const Timer = ({ initialTime = 0 }) => {
   const [isActive, setIsActive] = useState(false);
@@ -9,8 +17,8 @@ const Timer = ({ initialTime = 0 }) => {
   useEffect(() => {
     if (isActive && !isPaused) {
       intervalRef.current = setInterval(() => {
-        setTimer((prevTimer) => prevTimer + 1);
-      }, 1000);
+        setTimer((prevTimer) => prevTimer + 10);
+      }, 10);
     } else if (isPaused) {
       clearInterval(intervalRef.current);
     } else if (!isActive) {
@@ -34,9 +42,20 @@ const Timer = ({ initialTime = 0 }) => {
     setTimer(initialTime);
   };
 
+  const formatTime = (time) => {
+    const getMilliseconds = `00${time % 1000}`.slice(-3);
+    const seconds = Math.floor(time / 1000) % 60;
+    const getSeconds = `0${seconds}`.slice(-2);
+    const minutes = Math.floor(time / 60000) % 60;
+    const getMinutes = `0${minutes}`.slice(-2);
+    return `${getMinutes}:${getSeconds}:${getMilliseconds}`;
+  };
+
   return (
     <div>
-      <h1>{timer} seconds</h1>
+      <TimerContainer>
+        <h1>{formatTime(timer)}</h1>
+      </TimerContainer>
       <button onClick={handleStart}>Start</button>
       <button onClick={handlePause}>{isPaused ? 'Resume' : 'Pause'}</button>
       <button onClick={handleStop}>Stop</button>
