@@ -10,13 +10,20 @@ const TimerMode = ({ taskBatches, onTaskBatchDelete, onSavedTimedTask }) => {
     let interval = null;
     if (isRunning) {
       interval = setInterval(() => {
-        setElapsedTime((prevTime) => prevTime + 1);
-      }, 1000);
+        setElapsedTime((prevTime) => prevTime + 10); // Increment by 10ms
+      }, 10); // Update every 10ms for smoother display
     }
     return () => {
       clearInterval(interval);
     };
   }, [isRunning]);
+
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60000);
+    const seconds = Math.floor((time % 60000) / 1000);
+    const milliseconds = time % 1000;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(3, '0')}`;
+  };
 
   const startTimer = () => {
     if (selectedBatch && currentTaskIndex < selectedBatch.tasks.length) {
@@ -69,7 +76,7 @@ const TimerMode = ({ taskBatches, onTaskBatchDelete, onSavedTimedTask }) => {
           <p style={{ color: selectedBatch.tasks[currentTaskIndex].color }}>
             {selectedBatch.tasks[currentTaskIndex].name}
           </p>
-          <p>Elapsed Time: {elapsedTime} seconds</p>
+          <p>Elapsed Time: {formatTime(elapsedTime)}</p>
           <div>
             <button onClick={startTimer} disabled={isRunning}>
               Start
