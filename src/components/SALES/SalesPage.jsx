@@ -215,8 +215,10 @@ function SalesPage() {
     <h1>GhostRacr Solution Breakdown</h1>
 
     <p>GhostRacr is designed to boost your productivity through a unique approach to task management and time tracking. Here's how it works:</p>
+    <p>When you log in to GhostRacr, you embark on a journey of productivity and fun.</p>
 
     <h2>1. Plan Your Tasks</h2>
+    
     <ul>
         <li><strong>Task Manager:</strong> Create batches of 3 tasks in the Task Manager.</li>
         <li><strong>Color Coding:</strong> Each task is assigned a distinct color for easy visual identification.</li>
@@ -226,43 +228,6 @@ function SalesPage() {
     <ul>
         <li><strong>Timer Mode:</strong> Use the Timer Mode to record how long each task in your batch takes.</li>
         <li><strong>Baseline Creation:</strong> These recorded times establish your initial performance baseline for each task.</li>
-    </ul>
-
-    <h2>3. Race Against Yourself</h2>
-    <ul>
-        <li><strong>Race Mode:</strong> Challenge yourself to complete your batch of tasks faster than your previous times.</li>
-        <li><strong>Real-Time Feedback:</strong> Get instant feedback on your performance compared to your baseline.</li>
-    </ul>
-
-    <h2>4. Analyze and Improve</h2>
-    <ul>
-        <li><strong>Performance Review:</strong> After completing your tasks in Race Mode, review what went well and what could be improved.</li>
-        <li><strong>Progress Tracking:</strong> Monitor your improvement over time for each task and batch.</li>
-    </ul>
-
-    <h2>Key Features</h2>
-    <ul>
-        <li><strong>Batch Task Management:</strong> Organize your work into manageable batches of 3 tasks.</li>
-        <li><strong>Visual Task Identification:</strong> Use color coding to quickly recognize and switch between tasks.</li>
-        <li><strong>Time Tracking:</strong> Accurately record the time spent on each task.</li>
-        <li><strong>Self-Competition:</strong> Race against your own previous times to boost productivity.</li>
-        <li><strong>Performance Analysis:</strong> Reflect on your performance and identify areas for improvement.</li>
-    </ul>
-
-    <p>GhostRacr turns productivity into a game where you compete against yourself, helping you to continuously improve your efficiency and time management skills.</p>
-</div>
-    <p>When you log in to GhostRacr, you embark on a journey of productivity and fun. Here's how it works:</p>
-
-    <h3>1. Set Up and Record Tasks</h3>
-    <ul>
-        <li><strong>Timer and Task Manager:</strong> Begin by setting up your tasks and starting the timer. GhostRacr allows you to log each activity, ensuring you have a clear record of what needs to be done.</li>
-        <li><strong>Real-Time Feedback:</strong> As you work, you'll receive real-time feedback, helping you stay focused and engaged.</li>
-    </ul>
-
-    <h3>2. Race Against Your Past</h3>
-    <ul>
-        <li><strong>Baseline Creation:</strong> Every task you record establishes a baseline. This means you'll always have a previous performance to race against, turning each task into an exciting challenge.</li>
-        <li><strong>Progress Tracking:</strong> Track your progress over time. See how you improve with each session and get motivated by your own advancements.</li>
     </ul>
 
     <h3>3. Visual Cues and Habit Formation</h3>
@@ -277,20 +242,50 @@ function SalesPage() {
         <li><strong>Interval Training:</strong> Use your data to set up interval training for your habits. This feature allows you to break tasks into manageable intervals, increasing efficiency and making work less daunting.</li>
     </ul>
 
-    <h3>5. Community and Support</h3>
+    <h2>3. Race Against Yourself</h2>
+    <ul>
+        <li><strong>Race Mode:</strong> Challenge yourself to complete your batch of tasks faster than your previous times.</li>
+        <li><strong>Real-Time Feedback:</strong> Get instant feedback on your performance compared to your baseline.</li>
+        
+    </ul>
+
+    <h2>4. Analyze and Improve</h2>
+    <ul>
+        <li><strong>Performance Review:</strong> After completing your tasks in Race Mode, review what went well and what could be improved.</li>
+        <li><strong>Progress Tracking:</strong> Monitor your improvement over time for each task and batch.</li>
+    </ul>
+
+    <h3>2. Race Against Your Past</h3>
+    <ul>
+        <li><strong>Baseline Creation:</strong> Every task you record establishes a baseline. This means you'll always have a previous performance to race against, turning each task into an exciting challenge.</li>
+        <li><strong>Progress Tracking:</strong> Track your progress over time. See how you improve with each session and get motivated by your own advancements.</li>
+    </ul>
+
+   
+    <h3>5. Leaderboards</h3>
     <ul>
         <li><strong>Join a Community:</strong> Connect with other users who share similar goals. Exchange tips, participate in challenges, and find accountability partners within the GhostRacr community.</li>
         <li><strong>Expert Guidance:</strong> Access expert tips and strategies for maximizing your productivity. Our resources are designed to help you get the most out of GhostRacr.</li>
     </ul>
 
-    <h3>What You'll Receive</h3>
+    <h2>Key Features</h2>
     <ul>
-        <li><strong>Comprehensive Task Management System:</strong> A platform that helps you organize and track your tasks efficiently.</li>
-        <li><strong>Engaging Gamification Features:</strong> Tools that make working fun and help you stay motivated.</li>
-        <li><strong>In-Depth Performance Analytics:</strong> Insights that help you understand and improve your productivity.</li>
-        <li><strong>Supportive Community:</strong> A network of like-minded individuals and experts to support your journey.</li>
+        <li><strong>Batch Task Management:</strong> Organize your work into manageable batches of 3 tasks.</li>
+        <li><strong>Visual Task Identification:</strong> Use color coding to quickly recognize and switch between tasks.</li>
+        <li><strong>Time Tracking:</strong> Accurately record the time spent on each task.</li>
+        <li><strong>Self-Competition:</strong> Race against your own previous times to boost productivity.</li>
         <li><strong>Personal Growth Tools:</strong> Features designed to help you develop and maintain effective habits.</li>
+        <li><strong>LEADERBOARDS</strong> A network of like-minded individuals and experts to support your journey.</li>
+
+
+        <li><strong>Performance Analysis:</strong> Reflect on your performance and identify areas for improvement.</li>
     </ul>
+
+    <p>GhostRacr turns productivity into a game where you compete against yourself, helping you to continuously improve your efficiency and time management skills.</p>
+</div>
+
+   
+
 
     <p>By breaking down tasks and incorporating fun, interactive elements, GhostRacr transforms your daily routines into exciting challenges, helping you achieve more and enjoy the process.</p>
 </div>
