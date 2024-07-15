@@ -210,6 +210,47 @@ function SalesPage() {
         <SubTitle>Solution Breakdown</SubTitle>
         <div class="solution-breakdown">
     <h2>Solution Breakdown</h2>
+
+    <div class="ghostracr-solution">
+    <h1>GhostRacr Solution Breakdown</h1>
+
+    <p>GhostRacr is designed to boost your productivity through a unique approach to task management and time tracking. Here's how it works:</p>
+
+    <h2>1. Plan Your Tasks</h2>
+    <ul>
+        <li><strong>Task Manager:</strong> Create batches of 3 tasks in the Task Manager.</li>
+        <li><strong>Color Coding:</strong> Each task is assigned a distinct color for easy visual identification.</li>
+    </ul>
+
+    <h2>2. Time Your Tasks</h2>
+    <ul>
+        <li><strong>Timer Mode:</strong> Use the Timer Mode to record how long each task in your batch takes.</li>
+        <li><strong>Baseline Creation:</strong> These recorded times establish your initial performance baseline for each task.</li>
+    </ul>
+
+    <h2>3. Race Against Yourself</h2>
+    <ul>
+        <li><strong>Race Mode:</strong> Challenge yourself to complete your batch of tasks faster than your previous times.</li>
+        <li><strong>Real-Time Feedback:</strong> Get instant feedback on your performance compared to your baseline.</li>
+    </ul>
+
+    <h2>4. Analyze and Improve</h2>
+    <ul>
+        <li><strong>Performance Review:</strong> After completing your tasks in Race Mode, review what went well and what could be improved.</li>
+        <li><strong>Progress Tracking:</strong> Monitor your improvement over time for each task and batch.</li>
+    </ul>
+
+    <h2>Key Features</h2>
+    <ul>
+        <li><strong>Batch Task Management:</strong> Organize your work into manageable batches of 3 tasks.</li>
+        <li><strong>Visual Task Identification:</strong> Use color coding to quickly recognize and switch between tasks.</li>
+        <li><strong>Time Tracking:</strong> Accurately record the time spent on each task.</li>
+        <li><strong>Self-Competition:</strong> Race against your own previous times to boost productivity.</li>
+        <li><strong>Performance Analysis:</strong> Reflect on your performance and identify areas for improvement.</li>
+    </ul>
+
+    <p>GhostRacr turns productivity into a game where you compete against yourself, helping you to continuously improve your efficiency and time management skills.</p>
+</div>
     <p>When you log in to GhostRacr, you embark on a journey of productivity and fun. Here's how it works:</p>
 
     <h3>1. Set Up and Record Tasks</h3>
