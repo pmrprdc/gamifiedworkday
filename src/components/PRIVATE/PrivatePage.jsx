@@ -1,8 +1,52 @@
-import React from 'react';
-import VisualTimer from './TIMING/VisualTimer';  // Adjust the path as necessary
-import MatrixEffect from '../MatrixEffect'; // Adjust the path as necessary if it's in a different directory
-import TaskManager from './TIMING/TaskManager';
+import React, { useState } from 'react';
+import TaskManager from './privateAppComponents/TaskManager';
+import TimerMode from './privateAppComponents/TimerMode';
+import RaceMode from './privateAppComponents/RaceMode';
+
 const PrivatePage = () => {
+
+  const [taskBatches, setTaskBatches] = useState([]);
+  const [savedTimedTasks, setSavedTimedTasks] = useState([]);
+
+  const handleTaskBatchAdd = (batchName, newTasks) => {
+    const timestamp = new Date().toLocaleString();
+    const batchWithTimestamp = {
+      name: batchName,
+      tasks: newTasks,
+      timestamp,
+    };
+    setTaskBatches([...taskBatches, batchWithTimestamp]);
+  };
+
+  const handleTaskBatchDelete = (batchIndex) => {
+    const updatedBatches = taskBatches.filter((_, index) => index !== batchIndex);
+    setTaskBatches(updatedBatches);
+  };
+
+  const handleSavedTimedTask = (timedTask) => {
+    setSavedTimedTasks([...savedTimedTasks, timedTask]);
+  };
+
+  const handleTaskBatchSave = (updatedBatch) => {
+    const updatedBatches = taskBatches.map((batch) => {
+      if (batch.name === updatedBatch.name) {
+        return updatedBatch;
+      }
+      return batch;
+    });
+    setTaskBatches(updatedBatches);
+    const updatedTimedTasks = updatedBatch.tasks.map((task) => ({
+      batch: updatedBatch.name,
+      taskName: task.name,
+      taskColor: task.color,
+      duration: task.duration,
+    }));
+    setSavedTimedTasks([...savedTimedTasks, ...updatedTimedTasks]);
+  };
+  
+
+
+
   return (
     <>
 
@@ -10,8 +54,18 @@ const PrivatePage = () => {
      
      
         <h1>Private Page</h1>
-        <TaskManager />
-        <VisualTimer />
+        <TaskManager onTaskBatchAdd={handleTaskBatchAdd} />
+      <TimerMode
+        taskBatches={taskBatches}
+        onTaskBatchDelete={handleTaskBatchDelete}
+        onSavedTimedTask={handleSavedTimedTask}
+      />
+      <RaceMode
+        taskBatches={taskBatches}
+        savedTimedTasks={savedTimedTasks}
+        onTaskBatchSave={handleTaskBatchSave}
+      />
+   
      
   
     </>
