@@ -12,8 +12,8 @@ const RaceMode = ({ taskBatches, savedTimedTasks, onTaskBatchSave }) => {
     let interval = null;
     if (isRacing && remainingTime > 0) {
       interval = setInterval(() => {
-        setRemainingTime((prevTime) => prevTime - 1);
-      }, 1000);
+        setRemainingTime((prevTime) => Math.max(prevTime - 10, 0));
+      }, 10);
     } else if (isRacing && remainingTime === 0) {
       setIsRacing(false);
       setGameOver(true);
@@ -22,6 +22,13 @@ const RaceMode = ({ taskBatches, savedTimedTasks, onTaskBatchSave }) => {
       clearInterval(interval);
     };
   }, [isRacing, remainingTime]);
+
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60000);
+    const seconds = Math.floor((time % 60000) / 1000);
+    const milliseconds = time % 1000;
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(3, '0')}`;
+  };
 
   const getTaskDuration = (taskName) => {
     const savedTask = savedTimedTasks.find(
@@ -98,7 +105,7 @@ const RaceMode = ({ taskBatches, savedTimedTasks, onTaskBatchSave }) => {
       {selectedBatch && isRacing && (
         <div>
           <h3>Current Task: {selectedBatch.tasks[currentTaskIndex].name}</h3>
-          <p>Remaining Time: {remainingTime} seconds</p>
+          <p>Remaining Time: {formatTime(remainingTime)}</p>
           <button onClick={finishTask}>Finish Task</button>
         </div>
       )}
