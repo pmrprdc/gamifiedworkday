@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import MatrixEffect from "./components/MatrixEffect"; // Make sure to import the MatrixEffect
 
@@ -20,9 +19,10 @@ function App() {
       <MatrixEffect /> {/* This will run the Matrix background effect */}
       <BrowserRouter>
         <nav style={{ border: "2px solid red", zIndex: "1" }}>
-          <Link to="/private">Private</Link> | <Link to="/sales">Sales</Link> |{" "}
-          <Link to="/checkout">Checkout</Link>
-          <Link to="/checkout">Checkout2</Link>
+          <Link to="/private">Private</Link> |
+          <Link to="/sales">Sales</Link> |{" "}
+        
+          <Link to="/login">Log in</Link>
         </nav>
         <Routes>
           <Route
