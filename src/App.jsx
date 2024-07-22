@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div style={{ position: "relative" }}>
-      {"   "}
+      {"    "}
       {/* Ensuring that the background is covered by other contents */}
       <MatrixEffect /> {/* This will run the Matrix background effect */}
       <BrowserRouter>
