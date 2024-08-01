@@ -1,19 +1,7 @@
 import React from 'react';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { initializeApp } from "firebase/app";
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  // Replace with your actual Firebase config
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  // ... other config properties
-};
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+
 
 const LoginPage = () => {
   const signInWithGoogle = () => {
