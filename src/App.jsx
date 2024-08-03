@@ -6,7 +6,6 @@ import PrivatePage from "./components/PRIVATE/PrivatePage";
 import SalesPage from "./components/SALES/SalesPage";
 import CheckoutPage from "./components/CHECKOUT/CheckoutPage";
 import LoginPage from "./components/LOGIN/LoginPage";
-
 // Import the necessary Firebase modules
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -25,7 +24,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const auth = getAuth(app);
+export const auth = getAuth(app);
+
+console.log(firebaseConfig)
 
 function App() {
   const [count, setCount] = useState(0);
