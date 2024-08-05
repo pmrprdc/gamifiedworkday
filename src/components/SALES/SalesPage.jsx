@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import image from '../../assets/ghostracr.jpg'
 import FaqPage from './FaqPage';
-
+import image from '../../assets/gamifiedworkday.jpg'
 
 // Define styled components
 
@@ -79,7 +78,7 @@ function SalesPage() {
   return (
     <PageContainer>
       
-      <Title>GhostRacr</Title>
+      <Title>Gamified Workday</Title>
       <Section>
         
         <StyledBanner src={image} />
@@ -98,7 +97,7 @@ function SalesPage() {
     <p>Getting work done can be tough but you're not alone. Across the globe,
        thousands of professionals admit that not getting enough work done is even worse, 
        creating a cycle of stress and underachievement.
-       GhostRacr was designed to gamify tasks and focus your distracted mind so you can get more done! </p>
+       Gamified Workday was designed to gamify tasks and focus your distracted mind so you can get more done! </p>
     <StyledProblems>
 
       <div>
@@ -167,41 +166,41 @@ function SalesPage() {
         <SubTitle>Solution Introduction</SubTitle>
         <div class="solution-introduction">
     <h2>Solution Introduction</h2>
-    <p>Have you ever struggled with motivation, especially when it comes to deep work? You're not alone. Many people find it almost physically impossible to focus, leading to cycles of burnout, stress, boredom, and guilt. GhostRacr was designed to tackle these exact issues through a unique approach that combines gamification and data-driven insights.</p>
+    <p>Have you ever struggled with motivation, especially when it comes to deep work? You're not alone. Many people find it almost physically impossible to focus, leading to cycles of burnout, stress, boredom, and guilt. Gamified Workday was designed to tackle these exact issues through a unique approach that combines gamification and data-driven insights.</p>
     
-    <h3>Why GhostRacr Works</h3>
+    <h3>Why Gamified Workday Works</h3>
     
     <h4>Tackling Deep Procrastination</h4>
-    <p>Deep procrastination occurs when you find yourself unable to muster the motivation to start or complete tasks. This can be due to a lack of intrinsic motivation or overwhelming workload. GhostRacr addresses this by:</p>
+    <p>Deep procrastination occurs when you find yourself unable to muster the motivation to start or complete tasks. This can be due to a lack of intrinsic motivation or overwhelming workload. Gamified Workday addresses this by:</p>
     <ul>
-        <li><strong>Breaking Down Tasks:</strong> By logging tasks and using a timer, GhostRacr breaks down large projects into manageable chunks, making them less daunting.</li>
+        <li><strong>Breaking Down Tasks:</strong> By logging tasks and using a timer, Gamified Workday breaks down large projects into manageable chunks, making them less daunting.</li>
         <li><strong>Creating a Baseline:</strong> Each recorded task establishes a performance baseline, allowing you to race against your past achievements. This adds an element of excitement and competition to your work, which can help you overcome the inertia of starting.</li>
     </ul>
     
     <h4>Combating Dopamine Sickness</h4>
-    <p>Our brains are bombarded with constant distractions, which can make it hard to focus on more complex, longer tasks. GhostRacr helps you combat this by:</p>
+    <p>Our brains are bombarded with constant distractions, which can make it hard to focus on more complex, longer tasks. Gamified Workday helps you combat this by:</p>
     <ul>
         <li><strong>Providing Real-Time Feedback:</strong> Instant feedback on your performance keeps you engaged and helps your brain stay focused on the task at hand.</li>
         <li><strong>Incorporating Gamified Elements:</strong> Visual cues, progress bars, and achievement badges turn work into a game, making it more enjoyable and less of a chore.</li>
     </ul>
     
-    <h3>How GhostRacr Is Effective</h3>
+    <h3>How Gamified Workday Is Effective</h3>
     
     <h4>Building Intrinsic Motivation</h4>
-    <p>Intrinsic motivation comes from within and is essential for sustained productivity. GhostRacr enhances this by:</p>
+    <p>Intrinsic motivation comes from within and is essential for sustained productivity. Gamified Workday enhances this by:</p>
     <ul>
-        <li><strong>Setting Clear Goals:</strong> By providing a clear framework for your tasks and progress, GhostRacr helps you see the direct impact of your work on your goals.</li>
+        <li><strong>Setting Clear Goals:</strong> By providing a clear framework for your tasks and progress, Gamified Workday helps you see the direct impact of your work on your goals.</li>
         <li><strong>Creating a Sense of Achievement:</strong> Each completed task and achieved milestone boosts your confidence and motivation, reinforcing positive behavior.</li>
     </ul>
     
     <h4>Ensuring Continuous Improvement</h4>
-    <p>Continuous improvement is key to long-term success. GhostRacr facilitates this through:</p>
+    <p>Continuous improvement is key to long-term success. Gamified Workday facilitates this through:</p>
     <ul>
-        <li><strong>Detailed Analytics:</strong> After recording your tasks, GhostRacr provides in-depth analytics to help you understand your performance patterns and areas for improvement.</li>
+        <li><strong>Detailed Analytics:</strong> After recording your tasks, Gamified Workday provides in-depth analytics to help you understand your performance patterns and areas for improvement.</li>
         <li><strong>Interval Training for Habits:</strong> Use your performance data to set up interval training for your habits. This structured approach helps you build and maintain productive habits over time.</li>
     </ul>
     
-    <p>By combining these elements, GhostRacr not only makes work more engaging but also helps you develop the skills and habits necessary for long-term productivity and success.</p>
+    <p>By combining these elements, Gamified Workday not only makes work more engaging but also helps you develop the skills and habits necessary for long-term productivity and success.</p>
 </div>
 
       </Section>
@@ -211,11 +210,11 @@ function SalesPage() {
         <div class="solution-breakdown">
     <h2>Solution Breakdown</h2>
 
-    <div class="ghostracr-solution">
-    <h1>GhostRacr Solution Breakdown</h1>
+    <div class="Gamified Workday-solution">
+    <h1>Gamified Workday Solution Breakdown</h1>
 
-    <p>GhostRacr is designed to boost your productivity through a unique approach to task management and time tracking. Here's how it works:</p>
-    <p>When you log in to GhostRacr, you embark on a journey of productivity and fun.</p>
+    <p>Gamified Workday is designed to boost your productivity through a unique approach to task management and time tracking. Here's how it works:</p>
+    <p>When you log in to Gamified Workday, you embark on a journey of productivity and fun.</p>
 
     <h2>1. Plan Your Tasks</h2>
     
@@ -232,13 +231,13 @@ function SalesPage() {
 
     <h3>3. Visual Cues and Habit Formation</h3>
     <ul>
-        <li><strong>Gamified Elements:</strong> GhostRacr incorporates visual cues and gamification techniques to make habit formation enjoyable. Color-coded progress bars, achievement badges, and leaderboards keep you motivated.</li>
+        <li><strong>Gamified Elements:</strong> Gamified Workday incorporates visual cues and gamification techniques to make habit formation enjoyable. Color-coded progress bars, achievement badges, and leaderboards keep you motivated.</li>
         <li><strong>Habit Streaks:</strong> Maintain and grow your habit streaks. The more consistent you are, the more rewards you unlock, making productivity a game you’ll love playing.</li>
     </ul>
 
     <h3>4. Data Analysis and Interval Training</h3>
     <ul>
-        <li><strong>Comprehensive Analytics:</strong> After completing tasks, dive into detailed analytics. GhostRacr provides insights into your performance, helping you identify patterns and areas for improvement.</li>
+        <li><strong>Comprehensive Analytics:</strong> After completing tasks, dive into detailed analytics. Gamified Workday provides insights into your performance, helping you identify patterns and areas for improvement.</li>
         <li><strong>Interval Training:</strong> Use your data to set up interval training for your habits. This feature allows you to break tasks into manageable intervals, increasing efficiency and making work less daunting.</li>
     </ul>
 
@@ -264,8 +263,8 @@ function SalesPage() {
    
     <h3>5. Leaderboards</h3>
     <ul>
-        <li><strong>Join a Community:</strong> Connect with other users who share similar goals. Exchange tips, participate in challenges, and find accountability partners within the GhostRacr community.</li>
-        <li><strong>Expert Guidance:</strong> Access expert tips and strategies for maximizing your productivity. Our resources are designed to help you get the most out of GhostRacr.</li>
+        <li><strong>Join a Community:</strong> Connect with other users who share similar goals. Exchange tips, participate in challenges, and find accountability partners within the Gamified Workday community.</li>
+        <li><strong>Expert Guidance:</strong> Access expert tips and strategies for maximizing your productivity. Our resources are designed to help you get the most out of Gamified Workday.</li>
     </ul>
 
     <h2>Key Features</h2>
@@ -281,13 +280,13 @@ function SalesPage() {
         <li><strong>Performance Analysis:</strong> Reflect on your performance and identify areas for improvement.</li>
     </ul>
 
-    <p>GhostRacr turns productivity into a game where you compete against yourself, helping you to continuously improve your efficiency and time management skills.</p>
+    <p>Gamified Workday turns productivity into a game where you compete against yourself, helping you to continuously improve your efficiency and time management skills.</p>
 </div>
 
    
 
 
-    <p>By breaking down tasks and incorporating fun, interactive elements, GhostRacr transforms your daily routines into exciting challenges, helping you achieve more and enjoy the process.</p>
+    <p>By breaking down tasks and incorporating fun, interactive elements, Gamified Workday transforms your daily routines into exciting challenges, helping you achieve more and enjoy the process.</p>
 </div>
 
       </Section>
@@ -295,13 +294,13 @@ function SalesPage() {
       <Section>
         <ImagePlaceholder />
         <SubTitle>Social Proof & Testimonials</SubTitle>
-        <p>I tried ghostracr as an entrepreneur and gamified boxing, unboxing and packaging duties. It keeps me in line, and it was great - YAYA owner of Richards Variety Store</p>
+        <p>I tried Gamified Workday as an entrepreneur and gamified boxing, unboxing and packaging duties. It keeps me in line, and it was great - YAYA owner of Richards Variety Store</p>
       </Section>
       <Button>Buy Now</Button> 
       <Section>
         <ImagePlaceholder />
         <SubTitle>Reminder of What's Included</SubTitle>
-        <p>Remember! Once you get ghostracr, you're getting a timer that allows you to race against yourself in daily tasks</p>
+        <p>Remember! Once you get Gamified Workday, you're getting a timer that allows you to race against yourself in daily tasks</p>
         <p>Soccer moms use it, entrepreneurs use it and it's a part of a greater productivity system</p>
       </Section>
       <Button>Buy Now</Button> 
@@ -309,7 +308,7 @@ function SalesPage() {
         <ImagePlaceholder />
         <SubTitle>FAQ</SubTitle>
         <FaqPage />
-        <p>Who is ghostracr for?</p>
+        <p>Who is Gamified Workday for?</p>
         <p>Entrepreneurs looking to get their work done faster</p>
       </Section>
       <Button>Buy Now</Button> 
